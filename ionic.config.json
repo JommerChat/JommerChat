@@ -1,0 +1,7 @@
+{
+  "name": "parlantos",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
