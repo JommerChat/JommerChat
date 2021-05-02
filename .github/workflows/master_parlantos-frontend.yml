@@ -26,14 +26,13 @@ jobs:
     - name: npm install, build, and test
       run: |
         npm install
-        npm run build --if-present
-        npm run test --if-present
+        npm run build --prod
+      working-directory: .
 
     - name: Run Azure webapp deploy action using publish profile credentials
       uses: azure/webapps-deploy@v2
       with:
         app-name: parlantos-frontend
-        slot-name: Production
-        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E42BB61CBEFE4121A35EDE73640A447F }}
-        package: .
+        publish-profile: $
+        package: ./www
 
