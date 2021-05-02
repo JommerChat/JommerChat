@@ -33,6 +33,6 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: parlantos-frontend
-        publish-profile: $
+        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E42BB61CBEFE4121A35EDE73640A447F }}
         package: ./www
 
