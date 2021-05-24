@@ -8,13 +8,26 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'navbar',
+    redirectTo: 'navbar/chat',
     pathMatch: 'full'
   },
   {
     path: 'navbar',
     loadChildren: () => import('./features/navbar/navbar.module').then( m => m.NavbarPageModule)
+  },  {
+    path: 'mentions',
+    loadChildren: () => import('./features/mentions/mentions.module').then( m => m.MentionsPageModule)
   },
+  {
+    path: 'explore',
+    loadChildren: () => import('./features/explore/explore.module').then( m => m.ExplorePageModule)
+  },
+  {
+    path: 'servers',
+    loadChildren: () => import('./features/servers/servers.module').then( m => m.ServersPageModule)
+  },
+
+
 ];
 
 @NgModule({

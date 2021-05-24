@@ -15,7 +15,7 @@
             <ion-searchbar class="searchbar" color="primary"></ion-searchbar>
           </div>
         </ion-col>
-        <ion-col size="0.4" class="ion-text-center">
+        <ion-col size="0.6" class="ion-text-center">
           <ion-button fill="clear" color="light">
             <ion-icon name="settings-outline" size="large" style="margin: 0 auto"></ion-icon>
           </ion-button>
@@ -31,108 +31,68 @@
 </ion-header>
 
 <ion-content>
-  <ion-grid class="navbar-grid">
-    <ion-row>
-      <ion-col class="ion-no-padding">
-        <ion-button class="nav-tab-button" (click)="navTabClicked(0)" color="dark" [ngClass]="{ 'nav-tab-selected' : navTabSelectedList[0]}">
-          <div class="inner-nav-tab">
-            <ion-icon name="notifications-outline" class="nav-tab-icon-size"></ion-icon>
-            <ion-text class="nav-tab-text">Mentions</ion-text>
-          </div>
-        </ion-button>
+  <ion-grid class="container-grid">
+    <ion-row class="container-grid-row">
+      <ion-col class="ion-no-padding" size="0.5">
+        <ion-grid class="navbar-grid">
+          <ion-row>
+            <ion-col class="ion-no-padding">
+              <ion-button class="nav-tab-button" (click)="navTabClicked(0)" color="dark" [ngClass]="{ 'nav-tab-selected' : navTabSelectedList[0]}">
+                <div class="inner-nav-tab">
+                  <ion-icon name="notifications-outline" class="nav-tab-icon-size"></ion-icon>
+                  <ion-text class="nav-tab-text">Mentions</ion-text>
+                </div>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="ion-no-padding">
+              <ion-button class="nav-tab-button" (click)="navTabClicked(1)" color="dark" [ngClass]="{ 'nav-tab-selected' : navTabSelectedList[1]}">
+                <div class="inner-nav-tab">
+                  <ion-icon name="chatbubble-outline" class="nav-tab-icon-size"></ion-icon>
+                  <ion-text class="nav-tab-text">Chat</ion-text>
+                </div>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="ion-no-padding">
+              <ion-button class="nav-tab-button" (click)="navTabClicked(2)" color="dark" [ngClass]="{ 'nav-tab-selected' : navTabSelectedList[2]}">
+                <div class="inner-nav-tab">
+                  <ion-icon name="compass-outline" class="nav-tab-icon-size"></ion-icon>
+                  <ion-text class="nav-tab-text">Explore</ion-text>
+                </div>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="ion-no-padding">
+              <ion-button class="nav-tab-button" (click)="navTabClicked(3)" color="dark" [ngClass]="{ 'nav-tab-selected' : navTabSelectedList[3]}">
+                <div class="inner-nav-tab">
+                  <ion-icon name="people-circle-outline" class="nav-tab-icon-size"></ion-icon>
+                  <ion-text class="nav-tab-text">Servers</ion-text>
+                </div>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row class="ion-margin-top">
+            <ion-col class="ion-no-padding">
+              <div>
+                <div (click)="navTabClicked(4)" [ngClass]="{ 'nav-tab-selected' : navTabSelectedList[4]}">
+                  <ion-avatar class="server-icon" >
+                    <img src="assets/icon/favicon.png" alt="test">
+                  </ion-avatar>
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
       </ion-col>
-    </ion-row>
-    <ion-row>
       <ion-col class="ion-no-padding">
-        <ion-button class="nav-tab-button" (click)="navTabClicked(1)" color="dark" [ngClass]="{ 'nav-tab-selected' : navTabSelectedList[1]}">
-          <div class="inner-nav-tab">
-            <ion-icon name="chatbubble-outline" class="nav-tab-icon-size"></ion-icon>
-            <ion-text class="nav-tab-text">Chat</ion-text>
-          </div>
-        </ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col class="ion-no-padding">
-        <ion-button class="nav-tab-button" (click)="navTabClicked(2)" color="dark" [ngClass]="{ 'nav-tab-selected' : navTabSelectedList[2]}">
-          <div class="inner-nav-tab">
-            <ion-icon name="compass-outline" class="nav-tab-icon-size"></ion-icon>
-            <ion-text class="nav-tab-text">Explore</ion-text>
-          </div>
-        </ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col class="ion-no-padding">
-        <ion-button class="nav-tab-button" (click)="navTabClicked(3)" color="dark" [ngClass]="{ 'nav-tab-selected' : navTabSelectedList[3]}">
-          <div class="inner-nav-tab">
-            <ion-icon name="people-circle-outline" class="nav-tab-icon-size"></ion-icon>
-            <ion-text class="nav-tab-text">Servers</ion-text>
-          </div>
-        </ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row class="ion-margin-top">
-      <ion-col class="ion-no-padding">
-        <div>
-          <div (click)="navTabClicked(4)" [ngClass]="{ 'nav-tab-selected' : navTabSelectedList[4]}">
-            <ion-avatar class="server-icon" >
-              <img src="assets/icon/favicon.png" alt="test">
-            </ion-avatar>
-          </div>
-          <div (click)="navTabClicked(5)" [ngClass]="{ 'nav-tab-selected' : navTabSelectedList[5]}">
-            <ion-avatar class="server-icon">
-              <img src="assets/icon/favicon.png" alt="test">
-            </ion-avatar>
-          </div>
-          <div (click)="navTabClicked(5)" [ngClass]="{ 'nav-tab-selected' : navTabSelectedList[5]}">
-            <ion-avatar class="server-icon">
-              <img src="assets/icon/favicon.png" alt="test">
-            </ion-avatar>
-          </div><div (click)="navTabClicked(5)" [ngClass]="{ 'nav-tab-selected' : navTabSelectedList[5]}">
-          <ion-avatar class="server-icon">
-            <img src="assets/icon/favicon.png" alt="test">
-          </ion-avatar>
-        </div><div (click)="navTabClicked(5)" [ngClass]="{ 'nav-tab-selected' : navTabSelectedList[5]}">
-          <ion-avatar class="server-icon">
-            <img src="assets/icon/favicon.png" alt="test">
-          </ion-avatar>
-        </div><div (click)="navTabClicked(5)" [ngClass]="{ 'nav-tab-selected' : navTabSelectedList[5]}">
-          <ion-avatar class="server-icon">
-            <img src="assets/icon/favicon.png" alt="test">
-          </ion-avatar>
-        </div><div (click)="navTabClicked(5)" [ngClass]="{ 'nav-tab-selected' : navTabSelectedList[5]}">
-          <ion-avatar class="server-icon">
-            <img src="assets/icon/favicon.png" alt="test">
-          </ion-avatar>
-        </div><div (click)="navTabClicked(5)" [ngClass]="{ 'nav-tab-selected' : navTabSelectedList[5]}">
-          <ion-avatar class="server-icon">
-            <img src="assets/icon/favicon.png" alt="test">
-          </ion-avatar>
-        </div><div (click)="navTabClicked(5)" [ngClass]="{ 'nav-tab-selected' : navTabSelectedList[5]}">
-          <ion-avatar class="server-icon">
-            <img src="assets/icon/favicon.png" alt="test">
-          </ion-avatar>
-        </div><div (click)="navTabClicked(5)" [ngClass]="{ 'nav-tab-selected' : navTabSelectedList[5]}">
-          <ion-avatar class="server-icon">
-            <img src="assets/icon/favicon.png" alt="test">
-          </ion-avatar>
-        </div><div (click)="navTabClicked(5)" [ngClass]="{ 'nav-tab-selected' : navTabSelectedList[5]}">
-          <ion-avatar class="server-icon">
-            <img src="assets/icon/favicon.png" alt="test">
-          </ion-avatar>
-        </div><div (click)="navTabClicked(5)" [ngClass]="{ 'nav-tab-selected' : navTabSelectedList[5]}">
-          <ion-avatar class="server-icon">
-            <img src="assets/icon/favicon.png" alt="test">
-          </ion-avatar>
-        </div><div (click)="navTabClicked(5)" [ngClass]="{ 'nav-tab-selected' : navTabSelectedList[5]}">
-          <ion-avatar class="server-icon">
-            <img src="assets/icon/favicon.png" alt="test">
-          </ion-avatar>
-        </div>
-        </div>
+        <router-outlet></router-outlet>
       </ion-col>
     </ion-row>
   </ion-grid>
+
 
 </ion-content>
