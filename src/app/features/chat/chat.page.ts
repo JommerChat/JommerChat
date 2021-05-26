@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChatPage implements OnInit {
 
+  friendsSelected = true;
+
+  chatSelected: number;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onFriendsClicked() {
+    this.friendsSelected = !this.friendsSelected;
+  }
+
+  onChatSelected(index: number) {
+    this.chatSelected = index;
   }
 
 }

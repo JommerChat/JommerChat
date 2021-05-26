@@ -1,14 +1,47 @@
 
 <ion-content>
-  <ion-grid>
-    <ion-row>
+  <ion-grid class="ion-no-padding chat-container-grid">
+    <ion-row class="chat-container-row">
       <ion-col size="2">
-        <ion-grid>
+        <ion-grid class="chat-nav-grid ion-no-padding">
           <ion-row>
-            <ion-col>
-              <p>Chat sidebar</p>
+            <ion-col class="ion-no-padding">
+              <div class="friends-button ion-text-left" [ngClass]="{ 'friends-selected' : friendsSelected}" (click)="onFriendsClicked()">
+                <ion-icon name="happy" class="friends-icon" size="large" style="vertical-align: middle"></ion-icon>
+                <span class="friends-text" style="vertical-align: middle">Friends</span>
+              </div>
             </ion-col>
           </ion-row>
+          <ion-row class="dm-row">
+            <ion-col class="dm-text-col" size="9" offset="0.9" style="vertical-align: middle">
+              <span class="dm-text">Direct Messages</span>
+            </ion-col>
+            <ion-col class="dm-icon-col" size="2">
+              <ion-icon name="add" size="large" class="add-chat-icon"></ion-icon>
+            </ion-col>
+          </ion-row>
+          <ng-container>
+            <ion-row class="user-chat-row" (click)="onChatSelected(0)" [ngClass]="{'user-chat-row-selected': chatSelected === 0}">
+              <ion-col size="1.5" offset="0.25" class="dm-text-col">
+                <ion-avatar class="user-avatar">
+                  <img src="assets/icon/favicon.png" alt="test" class="user-img">
+                </ion-avatar>
+              </ion-col>
+              <ion-col class="user-text-col" offset="0.25">
+                <span class="user-text">Username</span>
+              </ion-col>
+            </ion-row>
+            <ion-row class="user-chat-row" (click)="onChatSelected(1)" [ngClass]="{'user-chat-row-selected': chatSelected === 1}">
+              <ion-col size="1.5" offset="0.25" class="dm-text-col">
+                <ion-avatar class="user-avatar">
+                  <img src="assets/icon/favicon.png" alt="test" class="user-img">
+                </ion-avatar>
+              </ion-col>
+              <ion-col class="user-text-col" offset="0.25">
+                <span class="user-text">Username</span>
+              </ion-col>
+            </ion-row>
+          </ng-container>
         </ion-grid>
       </ion-col>
       <ion-col>

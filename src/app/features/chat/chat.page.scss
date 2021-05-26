@@ -1,0 +1,112 @@
+.chat-nav-grid {
+  background-color: var(--ion-color-secondary);
+  height: 100%;
+}
+
+.chat-container-grid {
+  height: 100%;
+}
+
+.chat-container-row {
+  height: 100%;
+}
+
+.friends-icon {
+  margin-right: 4%;
+  margin-left: 5%;
+}
+
+.friends-button {
+  width: 85%;
+  text-align: left;
+  background-color: var(--ion-color-medium);
+  vertical-align: middle;
+  align-content: center;
+  margin: 5% auto;
+  border-radius: 50px;
+  padding: 5px 0;
+  color: white;
+  cursor: pointer;
+}
+
+.friends-button:hover {
+  background-color: var(--ion-color-medium-tint);
+}
+
+.friends-selected {
+  background-color: var(--ion-color-medium-shade) !important;
+}
+
+.friends-text {
+  font-size: 1.4em;
+}
+
+.dm-row {
+  margin-top: 8%;
+  color: white;
+}
+
+.dm-text {
+  font-size: 16px;
+}
+
+.dm-text-col {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.dm-icon-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-text-col {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.user-img {
+  height: 32px;
+  width: 32px;
+}
+
+.user-text {
+  font-size: 16px;
+  color: white;
+}
+
+.user-avatar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+}
+
+.user-chat-row {
+  width: 95%;
+  margin: 2px auto;
+  padding: 1.5% 0;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.user-chat-row:hover {
+  background-color: var(--ion-color-secondary-tint);
+}
+
+.user-chat-row-selected {
+  background-color: var(--ion-color-medium) !important;
+}
+
+.add-chat-icon {
+  cursor: pointer;
+}
+
+.add-chat-icon:hover {
+  color: var(--ion-color-light);
+}
