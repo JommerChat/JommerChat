@@ -52,4 +52,4 @@ jobs:
       with:
         app-name: 'parlantos'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_48ac12fdace2489d9a42943b1be33512 }}
-        package: ./www
+        package: .
