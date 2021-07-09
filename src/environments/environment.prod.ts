@@ -1,3 +1,7 @@
 export const environment = {
-  production: true
+  production: true,
+  issuer: 'https://dev-75166832.okta.com',
+  clientId: '0oa156czptZmhqdrv5d7',
+  redirectUri: 'https://parlantos/login/callback',
+  scopes: 'openid profile email'
 };

@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {LoginService} from './login.service';
+import {OktaAuthService} from '@okta/okta-angular';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +11,7 @@ import {LoginService} from './login.service';
 })
 export class LoginPage implements OnInit {
 
-  constructor(private loginService: LoginService) {}
+  constructor(private loginService: LoginService, private oktaAuth: OktaAuthService, private router: Router) {}
 
   public loginGroup: FormGroup;
 
@@ -18,13 +20,15 @@ export class LoginPage implements OnInit {
       username: new FormControl(),
       password: new FormControl()
     });
+    this.oktaAuth.isAuthenticated().then((authStatus) => {
+      if (authStatus) {
+        this.router.navigateByUrl('navbar/chat');
+      }
+    });
   }
 
-  submitLogin() {
-    const username = this.loginGroup.get('username') as AbstractControl;
-    const password = this.loginGroup.get('password') as AbstractControl;
-    this.loginService.submitCredentials(username.value, password.value);
-    console.log('Login submitted');
+  async submitLogin() {
+    await this.oktaAuth.signInWithRedirect({originalUri: 'navbar/chat'});
   }
 
 }

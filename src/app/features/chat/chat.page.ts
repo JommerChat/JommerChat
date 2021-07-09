@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {OktaAuthService} from '@okta/okta-angular';
 
 @Component({
   selector: 'app-chat',
@@ -11,17 +12,22 @@ export class ChatPage implements OnInit {
 
   chatSelected: number;
 
-  constructor() { }
+  constructor(private oktaAuth: OktaAuthService) { }
 
   ngOnInit() {
+    console.log(`Access token: ${this.oktaAuth.getAccessToken()}`);
   }
 
   onFriendsClicked() {
-    this.friendsSelected = !this.friendsSelected;
+    if (!this.friendsSelected) {
+      this.friendsSelected = !this.friendsSelected;
+      this.chatSelected = -1;
+    }
   }
 
   onChatSelected(index: number) {
     this.chatSelected = index;
+    this.friendsSelected = false;
   }
 
 }

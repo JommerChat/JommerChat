@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  issuer: 'https://dev-75166832.okta.com',
+  clientId: '0oa156czptZmhqdrv5d7',
+  redirectUri: 'http://localhost:8100/login/callback',
+  scopes: 'openid profile email'
 };
 
 /*

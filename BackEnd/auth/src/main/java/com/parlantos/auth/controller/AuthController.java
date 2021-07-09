@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 @Controller
 public class AuthController {
 
-    @PostMapping("auth")
+    @PostMapping("authn")
     public ResponseEntity<AuthResponse> authUser(@RequestBody AuthRequest authRequest) {
 
     }
