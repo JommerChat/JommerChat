@@ -16,6 +16,9 @@ export class ChatPage implements OnInit {
 
   ngOnInit() {
     console.log(`Access token: ${this.oktaAuth.getAccessToken()}`);
+    this.oktaAuth.getUser().then(result => {
+      console.log(`User info: ${JSON.stringify(result)}`);
+    });
   }
 
   onFriendsClicked() {
