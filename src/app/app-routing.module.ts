@@ -9,7 +9,11 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () => import('./features/login/login.module').then(m => m.HomePageModule)
+    loadChildren: () => import('./features/login/login/login.module').then(m => m.HomePageModule)
+  },
+  {
+    path: 'signup',
+    loadChildren: () => import('./features/login/create-account/create-account.module').then(m => m.CreateAccountPageModule)
   },
   {
     path: '',
@@ -36,6 +40,11 @@ const routes: Routes = [
     loadChildren: () => import('./features/servers/servers.module').then( m => m.ServersPageModule),
     canActivate: [ OktaAuthGuard ]
   },
+  {
+    path: 'create-account',
+    loadChildren: () => import('./features/login/create-account/create-account.module').then( m => m.CreateAccountPageModule)
+  },
+
 
 
 ];
