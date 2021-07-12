@@ -15,7 +15,7 @@ h1 {
 }
 
 ion-card {
-  width: 30em;
+  //width: 30em;
   background-color: #1E349C;
   border-radius: 10px;
   display: block;
@@ -51,4 +51,9 @@ ion-item {
   a {
     color: var(--ion-color-light);
   }
+}
+
+.card-col {
+  display: flex;
+  justify-content: center;
 }
