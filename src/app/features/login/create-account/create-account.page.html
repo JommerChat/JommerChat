@@ -1,9 +1,61 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>create-account</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-
+  <div class="create-account-div">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <h1 class="create-account-header">Create Account</h1>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="5">
+          <ion-card class="create-account-card">
+            <form [formGroup]="createAccountGroup">
+              <ion-grid>
+                <ion-row class="ion-justify-content-center">
+                  <ion-col size="11" class="top-column">
+                    <div class="email-label">
+                      Email
+                    </div>
+                    <ion-item color="medium">
+                      <ion-input type="text" id="email" formControlName="email"></ion-input>
+                    </ion-item>
+                    <div class="username-label">
+                      Username
+                    </div>
+                    <ion-item color="medium">
+                      <ion-input type="text" id="username" formControlName="username"></ion-input>
+                    </ion-item>
+                    <div class="password-label">
+                      Password
+                    </div>
+                    <ion-item color="medium">
+                      <ion-input type="text" id="password" formControlName="password"></ion-input>
+                    </ion-item>
+                    <div class="repeat-password-label">
+                      Confirm Password
+                    </div>
+                    <ion-item color="medium">
+                      <ion-input type="text" id="repeat-password" formControlName="repeatPassword"></ion-input>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col class="ion-text-center button-column bottom-column">
+                    <ion-button color="light" class="submit-button">Create Account</ion-button>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </form>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div class="sign-in-text">
+            Already have an account? <a href="/login">Sign in</a>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 </ion-content>
