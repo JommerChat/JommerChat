@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {OktaAuth} from '@okta/okta-auth-js';
+import {OktaAuth, UserClaims} from '@okta/okta-auth-js';
 import {environment} from '../../../environments/environment';
 import {BehaviorSubject} from 'rxjs';
 import {Router} from '@angular/router';
@@ -22,6 +22,14 @@ export class AuthService {
     const authenticated = await this.authClient.session.exists();
     this.isAuthenticated.next(authenticated);
     return authenticated;
+  }
+
+  getAccessToken(): string {
+    return this.authClient.getAccessToken();
+  }
+
+  async getUser(): Promise<UserClaims> {
+    return this.authClient.getUser();
   }
 
   async login(username: string, password: string): Promise<void> {
