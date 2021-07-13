@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {LoginService} from './login.service';
-import {OktaAuthService} from '@okta/okta-angular';
 import {Router} from '@angular/router';
+import {AuthService} from '../../../shared/auth/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -11,26 +11,28 @@ import {Router} from '@angular/router';
 })
 export class LoginPage implements OnInit {
 
-  constructor(private loginService: LoginService, private oktaAuth: OktaAuthService, private router: Router) {}
+  constructor(private loginService: LoginService, private router: Router, private authService: AuthService) {}
 
   public loginGroup: FormGroup;
 
   public invalidPassword = false;
 
-  ngOnInit() {
+  async ngOnInit() {
     this.loginGroup = new FormGroup({
       username: new FormControl(null, [Validators.required]),
       password: new FormControl(null, [Validators.required])
     });
-    this.oktaAuth.isAuthenticated().then((authStatus) => {
-      if (authStatus) {
-        this.router.navigateByUrl('navbar/chat');
-      }
-    });
+    if (await this.authService.checkAuthenticated()) {
+      await this.router.navigateByUrl('navbar/chat');
+    }
   }
 
   async submitLogin() {
-    await this.oktaAuth.signInWithRedirect({originalUri: 'navbar/chat'});
+    try {
+      await this.authService.login(this.username.value, this.password.value);
+    } catch (error) {
+      this.invalidPassword = true;
+    }
   }
 
   get username() {

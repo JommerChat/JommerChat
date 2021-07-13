@@ -1,12 +1,8 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import {OktaAuthGuard, OktaCallbackComponent} from '@okta/okta-angular';
+import {AuthGuardService} from './shared/auth/auth-guard.service';
 
 const routes: Routes = [
-  {
-    path: 'login/callback',
-    component: OktaCallbackComponent
-  },
   {
     path: 'login',
     loadChildren: () => import('./features/login/login/login.module').then(m => m.HomePageModule)
@@ -23,22 +19,22 @@ const routes: Routes = [
   {
     path: 'navbar',
     loadChildren: () => import('./features/navbar/navbar.module').then( m => m.NavbarPageModule),
-    canActivate: [ OktaAuthGuard ]
+    canActivate: [ AuthGuardService ]
   },
   {
     path: 'mentions',
     loadChildren: () => import('./features/mentions/mentions.module').then( m => m.MentionsPageModule),
-    canActivate: [ OktaAuthGuard ]
+    canActivate: [ AuthGuardService ]
   },
   {
     path: 'explore',
     loadChildren: () => import('./features/explore/explore.module').then( m => m.ExplorePageModule),
-    canActivate: [ OktaAuthGuard ]
+    canActivate: [ AuthGuardService ]
   },
   {
     path: 'servers',
     loadChildren: () => import('./features/servers/servers.module').then( m => m.ServersPageModule),
-    canActivate: [ OktaAuthGuard ]
+    canActivate: [ AuthGuardService ]
   },
   {
     path: 'create-account',

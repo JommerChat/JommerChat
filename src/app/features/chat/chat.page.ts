@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {OktaAuthService} from '@okta/okta-angular';
+import {AuthService} from '../../shared/auth/auth.service';
 
 @Component({
   selector: 'app-chat',
@@ -12,11 +12,11 @@ export class ChatPage implements OnInit {
 
   chatSelected: number;
 
-  constructor(private oktaAuth: OktaAuthService) { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
-    console.log(`Access token: ${this.oktaAuth.getAccessToken()}`);
-    this.oktaAuth.getUser().then(result => {
+    console.log(`Access token: ${this.authService.getAccessToken()}`);
+    this.authService.getUser().then(result => {
       console.log(`User info: ${JSON.stringify(result)}`);
     });
   }

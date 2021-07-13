@@ -1,5 +1,4 @@
-import {Component, OnInit} from '@angular/core';
-import {OktaAuthService} from '@okta/okta-angular';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
