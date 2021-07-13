@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {AbstractControl, FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {LoginService} from './login.service';
 import {OktaAuthService} from '@okta/okta-angular';
 import {Router} from '@angular/router';
@@ -15,10 +15,12 @@ export class LoginPage implements OnInit {
 
   public loginGroup: FormGroup;
 
+  public invalidPassword = false;
+
   ngOnInit() {
     this.loginGroup = new FormGroup({
-      username: new FormControl(),
-      password: new FormControl()
+      username: new FormControl(null, [Validators.required]),
+      password: new FormControl(null, [Validators.required])
     });
     this.oktaAuth.isAuthenticated().then((authStatus) => {
       if (authStatus) {
@@ -29,6 +31,14 @@ export class LoginPage implements OnInit {
 
   async submitLogin() {
     await this.oktaAuth.signInWithRedirect({originalUri: 'navbar/chat'});
+  }
+
+  get username() {
+    return this.loginGroup.get('username');
+  }
+
+  get password() {
+    return this.loginGroup.get('password');
   }
 
 }

@@ -9,28 +9,37 @@
         <ion-row class="ion-justify-content-center">
           <ion-col size="3">
             <ion-card>
-              <h1 class="ion-margin-bottom ion-margin-start">Sign in</h1>
               <form [formGroup]="loginGroup">
                 <ion-grid>
                   <ion-row>
-                    <ion-col size="12" class="ion-text-center">
+                    <ion-col size="11" offset="0.5" class="ion-text-center">
+                      <h1 class="ion-margin-bottom" style="text-align: left">Sign in</h1>
                       <ion-item color="medium">
                         <ion-label position="floating">
-                          <h2>Username</h2>
+                          <h2>Email/Username</h2>
                         </ion-label>
                         <ion-input type="text" id="username" formControlName="username"></ion-input>
                       </ion-item>
+                      <ng-container *ngIf="username.touched && username.errors?.required">
+                        <div class="form-error">Please enter your username.</div>
+                      </ng-container>
                       <ion-item class="ion-margin-top" color="medium">
                         <ion-label position="floating">
                           <h2>Password</h2>
                         </ion-label>
-                        <ion-input type="text" id="password" formControlName="password"></ion-input>
+                        <ion-input type="password" id="password" formControlName="password"></ion-input>
                       </ion-item>
+                      <ng-container *ngIf="password.touched && password.errors?.required">
+                        <div class="form-error">Please enter your password.</div>
+                      </ng-container>
+                      <ng-container *ngIf="invalidPassword && loginGroup.valid">
+                        <div class="form-error">Incorrect Password</div>
+                      </ng-container>
                     </ion-col>
                   </ion-row>
                   <ion-row class="ion-justify-content-center">
                     <ion-col class="ion-text-center" size="4">
-                      <ion-button (click)="submitLogin()" class="ion-margin-bottom" color="light" expand="block">Sign In</ion-button>
+                      <ion-button (click)="submitLogin()" class="ion-margin-bottom" color="light" expand="block" [disabled]="loginGroup.invalid">Sign In</ion-button>
                     </ion-col>
                   </ion-row>
                 </ion-grid>

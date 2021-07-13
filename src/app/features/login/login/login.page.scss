@@ -52,3 +52,9 @@ ion-item {
   display: flex;
   justify-content: center;
 }
+
+.form-error {
+  color: var(--ion-color-danger);
+  text-align: left;
+  margin-top: 5px;
+}
