@@ -1,0 +1,21 @@
+snowflake:
+  baseUrl: ${snowflake-base-url}
+spring:
+  datasource:
+    hikari:
+      connection-timeout: 20000
+      maximum-pool-size: 5
+    url: ${postgres-url}
+    username: ${postgres-username}
+    password: ${postgres-password}
+  jpa:
+    hibernate:
+      ddl-auto: none
+okta:
+  client:
+    token: ${okta-token}
+    org-url: ${okta-org-url}
+  oauth2:
+    issuer: ${okta-issuer}
+    clientId: ${okta-clientId}
+    clientSecret: ${okta-clientSecret}
