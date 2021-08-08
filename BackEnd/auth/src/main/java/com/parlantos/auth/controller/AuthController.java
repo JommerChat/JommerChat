@@ -1,18 +1,29 @@
 package com.parlantos.auth.controller;
 
-import com.parlantos.auth.beans.AuthRequest;
-import com.parlantos.auth.beans.AuthResponse;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.parlantos.auth.beans.RegisterRequest;
+import com.parlantos.auth.service.AuthService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import javax.xml.bind.ValidationException;
+
 @Controller
 public class AuthController {
 
-    @PostMapping("authn")
-    public ResponseEntity<AuthResponse> authUser(@RequestBody AuthRequest authRequest) {
+  AuthService authService;
 
-    }
+  AuthController(AuthService authService) {
+    this.authService = authService;
+  }
+
+  @PostMapping("register")
+  public ResponseEntity<String> register(@RequestBody RegisterRequest request) throws ValidationException, JsonProcessingException {
+    this.authService.registerUser(request);
+    return new ResponseEntity<>("Successfully created user", HttpStatus.OK);
+  }
 
 }

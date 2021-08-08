@@ -1,5 +1,7 @@
 package com.parlantos.auth.beans;
 
+import java.util.StringJoiner;
+
 public class RegisterRequest {
 
   private String email;
@@ -28,5 +30,12 @@ public class RegisterRequest {
 
   public void setPassword(String password) {
     this.password = password;
+  }
+
+  @Override
+  public String toString() {
+    return new StringJoiner(", ").add("Username: " + this.username)
+      .add("Password: " + this.password)
+      .add("Email: " + this.email).toString();
   }
 }
