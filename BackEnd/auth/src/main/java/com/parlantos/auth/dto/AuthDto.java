@@ -14,7 +14,7 @@ public class AuthDto {
 
   private final Logger logger = LoggerFactory.getLogger(AuthDto.class);
 
-  @Value("${snowflake.baseUrl}")
+  @Value("${snowflake.baseUrl:localhost:8080/snowflake}")
   private String snowflakeUrl;
 
   private final WebClient webClient = WebClient.create();

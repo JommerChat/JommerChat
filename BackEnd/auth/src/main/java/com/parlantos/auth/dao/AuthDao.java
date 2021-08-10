@@ -15,10 +15,10 @@ import javax.xml.bind.ValidationException;
 @Component
 public class AuthDao {
 
-  @Value("${okta.client.org-url}")
+  @Value("${okta.client.org-url:https://localhost:8080}")
   String oktaOrgUrl;
 
-  @Value("${okta.client.token}")
+  @Value("${okta.client.token:token}")
   String oktaApiToken;
 
   public User createOktaUser(String username, String password, String email) throws ValidationException {

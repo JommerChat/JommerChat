@@ -1,0 +1,22 @@
+snowflake:
+  baseUrl: http://localhost:8080
+spring:
+  datasource:
+    hikari:
+      connection-timeout: 20000
+      maximum-pool-size: 5
+    url: jdbc:h2:mem:jpadb
+    username: sa
+    password: mypass
+  jpa:
+    hibernate:
+      ddl-auto: none
+    database-platform: org.hibernate.dialect.H2Dialect
+okta:
+  client:
+    token: okta-token
+    org-url: https://localhost:8081/okta
+  oauth2:
+    issuer: https://localhost:8082/okta-issuer
+    clientId: okta-clientId
+    clientSecret: okta-clientSecret

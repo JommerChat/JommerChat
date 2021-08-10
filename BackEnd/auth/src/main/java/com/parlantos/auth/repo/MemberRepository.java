@@ -1,5 +1,6 @@
 package com.parlantos.auth.repo;
 
+
 import com.parlantos.auth.beans.MemberEntity;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
