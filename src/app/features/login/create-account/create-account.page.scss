@@ -36,7 +36,7 @@
 .username-label {
   font-size: 1.2em;
   color: white;
-  margin: 20px 0 5px 0;
+  margin: 16px 0 5px 0;
 }
 
 ion-item {
@@ -46,13 +46,13 @@ ion-item {
 .password-label {
   font-size: 1.2em;
   color: white;
-  margin: 20px 0 5px 0;
+  margin: 16px 0 5px 0;
 }
 
 .repeat-password-label {
   font-size: 1.2em;
   color: white;
-  margin: 20px 0 5px 0;
+  margin: 16px 0 5px 0;
 }
 
 .top-column {
@@ -72,4 +72,18 @@ ion-item {
   margin-bottom: 10px;
 }
 
+.form-error {
+  color: var(--ion-color-danger);
+  text-align: left;
+  margin-top: 5px;
+}
+
+.show-password-icon {
+  background-color: transparent;
+  color: var(--ion-color-light);
+  position: absolute;
+  right: 15px;
+  font-size: 25px;
+  z-index: 2;
+}
 
