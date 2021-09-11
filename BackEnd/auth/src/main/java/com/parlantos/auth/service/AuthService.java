@@ -55,7 +55,7 @@ public class AuthService {
     MemberEntity memberEntity = new MemberEntity();
     List<MemberEntity> tagEntity = this.memberRepository.findLastTagByDisplayName(request.getUsername());
     logger.info("Received the tagEntity for username {}: {}", request.getUsername(), tagEntity);
-    if(tagEntity == null) {
+    if(tagEntity == null || tagEntity.isEmpty()) {
       memberEntity.setName_tag("1");
       logger.info("Set base name tag for username: {}", request.getUsername());
     }
