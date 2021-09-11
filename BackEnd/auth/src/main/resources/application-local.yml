@@ -1,21 +1,21 @@
 snowflake:
-  baseUrl: ${snowflake-base-url}
+  baseUrl: ${snowflake_base_url}
 spring:
   datasource:
     hikari:
       connection-timeout: 20000
       maximum-pool-size: 5
-    url: ${postgres-url}
-    username: ${postgres-username}
-    password: ${postgres-password}
+    url: ${postgres_url}
+    username: ${postgres_username}
+    password: ${postgres_password}
   jpa:
     hibernate:
       ddl-auto: none
 okta:
   client:
-    token: ${okta-token}
-    org-url: ${okta-org-url}
+    token: ${okta_token}
+    org-url: ${okta_org_url}
   oauth2:
-    issuer: ${okta-issuer}
-    clientId: ${okta-clientId}
-    clientSecret: ${okta-clientSecret}
+    issuer: ${okta_issuer}
+    clientId: ${okta_clientId}
+    clientSecret: ${okta_clientSecret}
