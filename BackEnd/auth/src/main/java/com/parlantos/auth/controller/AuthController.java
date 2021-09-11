@@ -6,12 +6,16 @@ import com.parlantos.auth.service.AuthService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.xml.bind.ValidationException;
 
 @Controller
+@CrossOrigin
+@RequestMapping("auth")
 public class AuthController {
 
   AuthService authService;
