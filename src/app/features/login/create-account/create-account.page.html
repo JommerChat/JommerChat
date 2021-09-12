@@ -9,7 +9,7 @@
       <ion-row class="ion-justify-content-center">
         <ion-col size="3">
           <ion-card class="create-account-card">
-            <form [formGroup]="createAccountGroup">
+            <form [formGroup]="createAccountGroup" (ngSubmit)="registerUser()">
               <ion-grid>
                 <ion-row class="ion-justify-content-center">
                   <ion-col size="11" class="top-column">
@@ -32,23 +32,24 @@
                     </div>
                     <ion-item color="medium">
                       <ion-input [type]="hidePassword ? 'password': 'text'" id="password" formControlName="password" #password></ion-input>
-                      <button class="fa fa-eye show-password-icon" (click)="changePasswordView()"></button>
+                      <i class="fa fa-eye show-password-icon" (click)="changePasswordView()"></i>
                     </ion-item>
                     <div *ngIf="createAccountGroup.get('password').errors?.required && createAccountGroup.get('password').touched" class="form-error">Please enter a password.</div>
                     <div *ngIf="createAccountGroup.get('password').errors?.minlength && createAccountGroup.get('password').touched" class="form-error">Password must be 6 characters or more.</div>
+                    <div *ngIf="!meetsPasswordComplexity" class="form-error">Please enter a more complex password.</div>
                     <div class="repeat-password-label">
                       Confirm Password
                     </div>
                     <ion-item color="medium">
                       <ion-input [type]="hidePassword ? 'password': 'text'" id="repeat-password" formControlName="repeatPassword" pattern="{{password.value}}"></ion-input>
-                      <button class="fa fa-eye show-password-icon" (click)="changePasswordView()"></button>
+                      <i class="fa fa-eye show-password-icon" (click)="changePasswordView()"></i>
                     </ion-item>
                     <div *ngIf="createAccountGroup.get('repeatPassword').invalid && createAccountGroup.get('repeatPassword').touched" class="form-error">The passwords must match.</div>
                   </ion-col>
                 </ion-row>
                 <ion-row>
                   <ion-col class="ion-text-center button-column bottom-column">
-                    <ion-button color="light" class="submit-button" [disabled]="createAccountGroup.invalid">Create Account</ion-button>
+                    <ion-button type="submit" color="light" class="submit-button" [disabled]="createAccountGroup.invalid">Create Account</ion-button>
                   </ion-col>
                 </ion-row>
               </ion-grid>
