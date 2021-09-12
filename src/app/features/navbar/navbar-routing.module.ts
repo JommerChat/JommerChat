@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { NavbarPage } from './navbar.page';
-import {ChatPage} from '../chat/chat.page';
 
 const routes: Routes = [
   {

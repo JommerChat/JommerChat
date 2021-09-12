@@ -14,8 +14,8 @@ export class ChatPage implements OnInit {
 
   constructor(private authService: AuthService) { }
 
-  ngOnInit() {
-    console.log(`Access token: ${this.authService.getAccessToken()}`);
+  async ngOnInit() {
+    console.log(`Authentication status: ${await this.authService.checkAuthenticated()}`);
     this.authService.getUser().then(result => {
       console.log(`User info: ${JSON.stringify(result)}`);
     });
