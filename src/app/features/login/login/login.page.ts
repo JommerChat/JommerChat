@@ -22,6 +22,15 @@ export class LoginPage implements OnInit {
       username: new FormControl(null, [Validators.required]),
       password: new FormControl(null, [Validators.required])
     });
+    console.log('Executed login page ngOnInit');
+    if (this.authService.authClient.isLoginRedirect()) {
+      this.authService.authClient.token.parseFromUrl()
+        .then(data => {
+          console.log(`Contents of parseFromUrl are: ${JSON.stringify(data)}`);
+          this.authService.authClient.tokenManager.add('idToken', data.tokens.idToken);
+          this.authService.authClient.tokenManager.add('accessToken', data.tokens.accessToken);
+        });
+    }
     if (await this.authService.checkAuthenticated()) {
       await this.router.navigateByUrl('navbar/chat');
     }

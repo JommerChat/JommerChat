@@ -9,14 +9,17 @@ import {Router} from '@angular/router';
 })
 export class AuthService {
 
-  private authClient = new OktaAuth({
+  public authClient = new OktaAuth({
     issuer: environment.issuer,
-    clientId: environment.clientId
+    clientId: environment.clientId,
+    redirectUri: environment.redirectUri
   });
 
   public isAuthenticated = new BehaviorSubject<boolean>(false);
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+    this.authClient.start();
+  }
 
   async checkAuthenticated(): Promise<boolean> {
     const authenticated = await this.authClient.session.exists();
@@ -33,13 +36,15 @@ export class AuthService {
   }
 
   async login(username: string, password: string): Promise<void> {
-    const transaction = await this.authClient.signIn({username, password});
-
+    const transaction = await this.authClient.signInWithCredentials({username, password});
     if (transaction.status !== 'SUCCESS') {
       throw Error(`Authentication error occurred with status: ${transaction.status}`);
     }
     this.isAuthenticated.next(true);
-    this.authClient.session.setCookieAndRedirect(transaction.sessionToken);
+    await this.authClient.token.getWithRedirect({
+      sessionToken: transaction.sessionToken,
+      responseType: 'id_token'
+    });
   }
 
   async logout(redirect: string): Promise<void> {

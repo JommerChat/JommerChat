@@ -6,6 +6,10 @@ const routes: Routes = [
   {
     path: '',
     component: LoginPage,
+  },
+  {
+    path: 'callback',
+    component: LoginPage
   }
 ];
 
