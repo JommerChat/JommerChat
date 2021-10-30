@@ -64,7 +64,7 @@ public class PermissionEntity {
     this.rolePermissionEntity = rolePermissionEntity;
   }
 
-  @OneToMany(mappedBy = "permission")
+  @OneToMany
   private List<RolePermissionEntity> rolePermissionEntity;
 
 }

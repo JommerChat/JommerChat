@@ -16,10 +16,10 @@ public class RoleEntity {
   @Column(name = "name")
   private String name;
 
-  @OneToMany(mappedBy = "role")
+  @OneToMany
   private List<RolePermissionEntity> rolePermissionEntityList;
 
-  @OneToMany(mappedBy = "role")
+  @OneToMany
   private List<GuildRoleEntity> guildRoleEntityList;
 
   @Override

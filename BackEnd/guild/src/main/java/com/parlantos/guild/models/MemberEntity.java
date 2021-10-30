@@ -35,16 +35,16 @@ public class MemberEntity {
   @Column(name = "email")
   private String email;
 
-  @OneToMany(mappedBy = "member")
+  @OneToMany
   private List<FriendEntity> friendEntityList;
 
-  @OneToMany(mappedBy = "member")
+  @OneToMany
   private List<MessageEntity> messageEntityList;
 
-  @OneToMany(mappedBy = "member")
+  @OneToMany
   private List<ReplyEntity> replyEntityList;
 
-  @OneToMany(mappedBy = "member")
+  @OneToMany
   private List<GuildMemberEntity> guildMemberEntityList;
 
   @Override

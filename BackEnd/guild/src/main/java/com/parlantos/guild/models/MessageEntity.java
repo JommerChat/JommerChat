@@ -104,12 +104,12 @@ public class MessageEntity {
   @JoinColumn(name = "text_channel_id", nullable = false, referencedColumnName = "id")
   private TextChannelEntity textChannelEntity;
 
-  @OneToMany(mappedBy = "message")
+  @OneToMany
   private List<PinsEntity> pins;
 
-  @OneToMany(mappedBy = "message")
+  @OneToMany
   private List<ReactionEntity> reaction;
 
-  @OneToMany(mappedBy = "message")
+  @OneToMany
   private List<ReplyEntity> reply;
 }

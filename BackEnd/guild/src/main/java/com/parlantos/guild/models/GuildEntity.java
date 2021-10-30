@@ -25,16 +25,16 @@ public class GuildEntity {
   @Column(name = "image")
   private String image;
 
-  @OneToMany(mappedBy = "guild")
+  @OneToMany
   private List<PinsEntity> pinsEntityList;
 
-  @OneToMany(mappedBy = "guild")
+  @OneToMany
   private List<GuildMemberEntity> guildMemberEntityList;
 
-  @OneToMany(mappedBy = "guild")
+  @OneToMany
   private List<TextChannelEntity> textChannelEntityList;
 
-  @OneToMany(mappedBy = "guild")
+  @OneToMany
   private List<VoiceChannelEntity> voiceChannelEntityList;
 
   @Override

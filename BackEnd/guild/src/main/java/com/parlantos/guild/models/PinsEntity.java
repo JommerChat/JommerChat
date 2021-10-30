@@ -18,12 +18,12 @@ public class PinsEntity {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     PinsEntity that = (PinsEntity) o;
-    return id.equals(that.id) && Objects.equals(createdAt, that.createdAt) && Objects.equals(messageId, that.messageId) && Objects.equals(messageEntity, that.messageEntity) && Objects.equals(guildEntity, that.guildEntity) && Objects.equals(textChannelEntity, that.textChannelEntity) && Objects.equals(serverId, that.serverId) && Objects.equals(textChannelId, that.textChannelId);
+    return id.equals(that.id) && Objects.equals(createdAt, that.createdAt) && Objects.equals(messageEntity, that.messageEntity) && Objects.equals(guildEntity, that.guildEntity) && Objects.equals(textChannelEntity, that.textChannelEntity);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, messageId, messageEntity, guildEntity, textChannelEntity, serverId, textChannelId);
+    return Objects.hash(id, createdAt, messageEntity, guildEntity, textChannelEntity);
   }
 
   public void setId(BigInteger id) {
@@ -36,14 +36,6 @@ public class PinsEntity {
 
   public void setCreatedAt(LocalDateTime createdAt) {
     this.createdAt = createdAt;
-  }
-
-  public BigInteger getMessageId() {
-    return messageId;
-  }
-
-  public void setMessageId(BigInteger messageId) {
-    this.messageId = messageId;
   }
 
   public MessageEntity getMessageEntity() {
@@ -70,31 +62,12 @@ public class PinsEntity {
     this.textChannelEntity = textChannelEntity;
   }
 
-  public BigInteger getServerId() {
-    return serverId;
-  }
-
-  public void setServerId(BigInteger serverId) {
-    this.serverId = serverId;
-  }
-
-  public BigInteger getTextChannelId() {
-    return textChannelId;
-  }
-
-  public void setTextChannelId(BigInteger textChannelId) {
-    this.textChannelId = textChannelId;
-  }
-
   @Id
   @Column(name = "id")
   private BigInteger id;
 
   @Column(name = "created_at")
   private LocalDateTime createdAt;
-
-  @Column(name = "message_id")
-  private BigInteger messageId;
 
   @ManyToOne
   @JoinColumn(name = "message_id", nullable = false, referencedColumnName = "id")
@@ -107,10 +80,4 @@ public class PinsEntity {
   @ManyToOne
   @JoinColumn(name = "text_channel_id", nullable = false, referencedColumnName = "id")
   private TextChannelEntity textChannelEntity;
-
-  @Column(name = "server_id")
-  private BigInteger serverId;
-
-  @Column(name = "text_channel_id")
-  private BigInteger textChannelId;
 }
