@@ -1,27 +1,12 @@
 package com.parlantos.guild.models;
 
-import java.math.BigInteger;
-import java.time.LocalDateTime;
-
 public class CreateGuildRequest {
 
-  private BigInteger id;
+  private String name;
 
-  public BigInteger getId() {
-    return id;
-  }
+  private String description;
 
-  public void setId(BigInteger id) {
-    this.id = id;
-  }
-
-  public LocalDateTime getCreatedAt() {
-    return createdAt;
-  }
-
-  public void setCreatedAt(LocalDateTime createdAt) {
-    this.createdAt = createdAt;
-  }
+  private String image;
 
   public String getName() {
     return name;
@@ -39,9 +24,11 @@ public class CreateGuildRequest {
     this.description = description;
   }
 
-  private LocalDateTime createdAt;
+  public String getImage() {
+    return image;
+  }
 
-  private String name;
-
-  private String description;
+  public void setImage(String image) {
+    this.image = image;
+  }
 }
