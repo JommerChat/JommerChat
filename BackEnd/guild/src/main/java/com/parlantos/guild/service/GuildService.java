@@ -2,8 +2,16 @@ package com.parlantos.guild.service;
 
 import com.parlantos.guild.dto.SnowflakeDto;
 import com.parlantos.guild.models.CreateGuildRequest;
+import com.parlantos.guild.models.CreateMessageRequest;
 import com.parlantos.guild.models.entities.GuildEntity;
+import com.parlantos.guild.models.entities.MemberEntity;
+import com.parlantos.guild.models.entities.MessageEntity;
+import com.parlantos.guild.models.entities.TextChannelEntity;
 import com.parlantos.guild.repo.GuildRepo;
+import com.parlantos.guild.repo.MemberRepo;
+import com.parlantos.guild.repo.MessageRepo;
+import com.parlantos.guild.repo.TextChannelRepo;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
 import javax.xml.bind.ValidationException;
@@ -14,10 +22,16 @@ public class GuildService {
 
   private SnowflakeDto snowflakeDto;
   private GuildRepo guildRepo;
+  private MessageRepo messageRepo;
+  private TextChannelRepo textChannelRepo;
+  private MemberRepo memberRepo;
 
-  GuildService(SnowflakeDto snowflakeDto, GuildRepo guildRepo) {
+  GuildService(SnowflakeDto snowflakeDto, GuildRepo guildRepo, MessageRepo messageRepo, MemberRepo memberRepo, TextChannelRepo textChannelRepo) {
     this.snowflakeDto = snowflakeDto;
     this.guildRepo = guildRepo;
+    this.messageRepo = messageRepo;
+    this.memberRepo = memberRepo;
+    this.textChannelRepo = textChannelRepo;
   }
 
 
@@ -35,4 +49,16 @@ public class GuildService {
     return guildEntity;
   }
 
+  public MessageEntity createMessage(CreateMessageRequest createMessageRequest) throws ValidationException {
+    MemberEntity memberEntity = this.memberRepo.findById(createMessageRequest.getUserId()).orElseThrow(() -> new ValidationException("The provided member id does not exist"));
+    TextChannelEntity textChannelEntity = this.textChannelRepo.findById(createMessageRequest.getTextChannelId()).orElseThrow(() -> new ValidationException("The provided text channel id does not exist"));
+    MessageEntity messageEntity = new MessageEntity();
+    messageEntity.setId(this.snowflakeDto.getSnowflakeId().block());
+    messageEntity.setMemberEntity(memberEntity);
+    messageEntity.setTextChannelEntity(textChannelEntity);
+    messageEntity.setCreatedAt(LocalDateTime.now());
+    messageEntity.setContent(createMessageRequest.getContent());
+    this.messageRepo.save(messageEntity);
+    return messageEntity;
+  }
 }

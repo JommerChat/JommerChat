@@ -1,6 +1,7 @@
 package com.parlantos.guild.controller;
 
 import com.parlantos.guild.models.CreateGuildRequest;
+import com.parlantos.guild.models.CreateMessageRequest;
 import com.parlantos.guild.models.entities.GuildEntity;
 import com.parlantos.guild.models.entities.MemberEntity;
 import com.parlantos.guild.models.entities.MessageEntity;
@@ -40,8 +41,8 @@ public class GuildController {
   }
 
   @PostMapping("/createMessage")
-  public ResponseEntity<MessageEntity> createMessage() {
-
+  public ResponseEntity<MessageEntity> createMessage(CreateMessageRequest createMessageRequest) throws ValidationException {
+    return new ResponseEntity<>(this.guildService.createMessage(createMessageRequest), HttpStatus.OK);
   }
 
 }
