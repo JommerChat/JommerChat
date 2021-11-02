@@ -1,4 +1,4 @@
-package com.parlantos.guild.models;
+package com.parlantos.guild.models.entities;
 
 import javax.persistence.*;
 import java.math.BigInteger;
@@ -6,8 +6,8 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
-@Table(name = "text_channel")
-public class TextChannelEntity {
+@Table(name = "voice_channel")
+public class VoiceChannelEntity {
 
   @Id
   @Column(name = "id")
@@ -17,23 +17,20 @@ public class TextChannelEntity {
   private LocalDateTime createdAt;
 
   @ManyToOne
-  @JoinColumn(name = "server_id", nullable = false, referencedColumnName = "id")
+  @JoinColumn(name = "guild_id", nullable = false, referencedColumnName = "id")
   private GuildEntity guildEntity;
-
-  @Column(name = "title")
-  private String title;
 
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
-    TextChannelEntity that = (TextChannelEntity) o;
-    return id.equals(that.id) && Objects.equals(createdAt, that.createdAt) && Objects.equals(guildEntity, that.guildEntity) && Objects.equals(title, that.title) && Objects.equals(description, that.description);
+    VoiceChannelEntity that = (VoiceChannelEntity) o;
+    return id.equals(that.id) && Objects.equals(createdAt, that.createdAt) && Objects.equals(guildEntity, that.guildEntity) && Objects.equals(title, that.title);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, guildEntity, title, description);
+    return Objects.hash(id, createdAt, guildEntity, title);
   }
 
   public BigInteger getId() {
@@ -68,14 +65,6 @@ public class TextChannelEntity {
     this.title = title;
   }
 
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
-  @Column(name = "description")
-  private String description;
+  @Column(name = "title")
+  private String title;
 }

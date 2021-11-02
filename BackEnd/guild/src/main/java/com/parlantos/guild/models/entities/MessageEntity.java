@@ -1,9 +1,8 @@
-package com.parlantos.guild.models;
+package com.parlantos.guild.models.entities;
 
 import javax.persistence.*;
 import java.math.BigInteger;
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -22,12 +21,12 @@ public class MessageEntity {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     MessageEntity that = (MessageEntity) o;
-    return id.equals(that.id) && Objects.equals(createdAt, that.createdAt) && Objects.equals(content, that.content) && Objects.equals(memberEntity, that.memberEntity) && Objects.equals(textChannelEntity, that.textChannelEntity) && Objects.equals(pins, that.pins) && Objects.equals(reaction, that.reaction) && Objects.equals(reply, that.reply);
+    return id.equals(that.id) && Objects.equals(createdAt, that.createdAt) && Objects.equals(content, that.content) && Objects.equals(memberEntity, that.memberEntity) && Objects.equals(textChannelEntity, that.textChannelEntity);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, content, memberEntity, textChannelEntity, pins, reaction, reply);
+    return Objects.hash(id, createdAt, content, memberEntity, textChannelEntity);
   }
 
   public LocalDateTime getCreatedAt() {
@@ -62,30 +61,6 @@ public class MessageEntity {
     this.textChannelEntity = textChannelEntity;
   }
 
-  public List<PinsEntity> getPins() {
-    return pins;
-  }
-
-  public void setPins(List<PinsEntity> pins) {
-    this.pins = pins;
-  }
-
-  public List<ReactionEntity> getReaction() {
-    return reaction;
-  }
-
-  public void setReaction(List<ReactionEntity> reaction) {
-    this.reaction = reaction;
-  }
-
-  public List<ReplyEntity> getReply() {
-    return reply;
-  }
-
-  public void setReply(List<ReplyEntity> reply) {
-    this.reply = reply;
-  }
-
   @Id
   @Column(name = "id")
   private BigInteger id;
@@ -103,13 +78,4 @@ public class MessageEntity {
   @ManyToOne
   @JoinColumn(name = "text_channel_id", nullable = false, referencedColumnName = "id")
   private TextChannelEntity textChannelEntity;
-
-  @OneToMany
-  private List<PinsEntity> pins;
-
-  @OneToMany
-  private List<ReactionEntity> reaction;
-
-  @OneToMany
-  private List<ReplyEntity> reply;
 }

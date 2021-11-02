@@ -1,4 +1,4 @@
-package com.parlantos.guild.models;
+package com.parlantos.guild.models.entities;
 
 
 import javax.persistence.*;
@@ -74,7 +74,7 @@ public class PinsEntity {
   private MessageEntity messageEntity;
 
   @ManyToOne
-  @JoinColumn(name = "server_id", nullable = false, referencedColumnName = "id")
+  @JoinColumn(name = "guild_id", nullable = false, referencedColumnName = "id")
   private GuildEntity guildEntity;
 
   @ManyToOne

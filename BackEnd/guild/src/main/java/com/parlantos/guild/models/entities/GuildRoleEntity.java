@@ -1,4 +1,4 @@
-package com.parlantos.guild.models;
+package com.parlantos.guild.models.entities;
 
 import javax.persistence.*;
 import java.math.BigInteger;
@@ -13,7 +13,7 @@ public class GuildRoleEntity {
   private BigInteger id;
 
   @ManyToOne
-  @JoinColumn(name = "server_member_id", nullable = false, referencedColumnName = "id")
+  @JoinColumn(name = "guild_member_id", nullable = false, referencedColumnName = "id")
   private GuildMemberEntity guildMemberEntity;
 
   @Override

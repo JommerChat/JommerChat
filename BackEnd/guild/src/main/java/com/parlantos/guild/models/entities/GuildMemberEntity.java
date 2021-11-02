@@ -1,7 +1,8 @@
-package com.parlantos.guild.models;
+package com.parlantos.guild.models.entities;
 
 import javax.persistence.*;
 import java.math.BigInteger;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
@@ -17,8 +18,11 @@ public class GuildMemberEntity {
   private MemberEntity memberEntity;
 
   @ManyToOne
-  @JoinColumn(name = "server_id", nullable = false, referencedColumnName = "id")
+  @JoinColumn(name = "guild_id", nullable = false, referencedColumnName = "id")
   private GuildEntity guildEntity;
+
+  @Column(name = "created_at")
+  private LocalDateTime createdAt;
 
   @Override
   public boolean equals(Object o) {

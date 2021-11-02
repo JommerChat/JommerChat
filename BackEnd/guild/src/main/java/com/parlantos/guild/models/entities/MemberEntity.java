@@ -1,9 +1,8 @@
-package com.parlantos.guild.models;
+package com.parlantos.guild.models.entities;
 
 import javax.persistence.*;
 import java.math.BigInteger;
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -35,61 +34,17 @@ public class MemberEntity {
   @Column(name = "email")
   private String email;
 
-  @OneToMany
-  private List<FriendEntity> friendEntityList;
-
-  @OneToMany
-  private List<MessageEntity> messageEntityList;
-
-  @OneToMany
-  private List<ReplyEntity> replyEntityList;
-
-  @OneToMany
-  private List<GuildMemberEntity> guildMemberEntityList;
-
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     MemberEntity that = (MemberEntity) o;
-    return id.equals(that.id) && Objects.equals(username, that.username) && Objects.equals(password, that.password) && Objects.equals(salt, that.salt) && Objects.equals(displayName, that.displayName) && Objects.equals(nameTag, that.nameTag) && Objects.equals(createdAt, that.createdAt) && Objects.equals(email, that.email) && Objects.equals(friendEntityList, that.friendEntityList) && Objects.equals(messageEntityList, that.messageEntityList) && Objects.equals(replyEntityList, that.replyEntityList) && Objects.equals(guildMemberEntityList, that.guildMemberEntityList) && Objects.equals(oktaId, that.oktaId);
+    return id.equals(that.id) && Objects.equals(username, that.username) && Objects.equals(password, that.password) && Objects.equals(salt, that.salt) && Objects.equals(displayName, that.displayName) && Objects.equals(nameTag, that.nameTag) && Objects.equals(createdAt, that.createdAt) && Objects.equals(email, that.email) && Objects.equals(oktaId, that.oktaId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, username, password, salt, displayName, nameTag, createdAt, email, friendEntityList, messageEntityList, replyEntityList, guildMemberEntityList, oktaId);
-  }
-
-  public List<FriendEntity> getFriendEntityList() {
-    return friendEntityList;
-  }
-
-  public void setFriendEntityList(List<FriendEntity> friendEntityList) {
-    this.friendEntityList = friendEntityList;
-  }
-
-  public List<MessageEntity> getMessageEntityList() {
-    return messageEntityList;
-  }
-
-  public void setMessageEntityList(List<MessageEntity> messageEntityList) {
-    this.messageEntityList = messageEntityList;
-  }
-
-  public List<ReplyEntity> getReplyEntityList() {
-    return replyEntityList;
-  }
-
-  public void setReplyEntityList(List<ReplyEntity> replyEntityList) {
-    this.replyEntityList = replyEntityList;
-  }
-
-  public List<GuildMemberEntity> getGuildMemberEntityList() {
-    return guildMemberEntityList;
-  }
-
-  public void setGuildMemberEntityList(List<GuildMemberEntity> guildMemberEntityList) {
-    this.guildMemberEntityList = guildMemberEntityList;
+    return Objects.hash(id, username, password, salt, displayName, nameTag, createdAt, email, oktaId);
   }
 
   public BigInteger getId() {
@@ -166,4 +121,13 @@ public class MemberEntity {
 
   @Column(name = "okta_id")
   private String oktaId;
+
+  @Column(name = "avatar")
+  private String avatar;
+
+  @Column(name = "discord_id")
+  BigInteger discordId;
+
+  @Column(name = "discord_flag")
+  Boolean discordFlag;
 }
