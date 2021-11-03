@@ -1,17 +1,12 @@
 package com.parlantos.guild.service;
 
 import com.parlantos.guild.dto.SnowflakeDto;
+import com.parlantos.guild.models.AddMemberRequest;
 import com.parlantos.guild.models.CreateGuildRequest;
 import com.parlantos.guild.models.CreateMessageRequest;
 import com.parlantos.guild.models.CreateTextChannelRequest;
-import com.parlantos.guild.models.entities.GuildEntity;
-import com.parlantos.guild.models.entities.MemberEntity;
-import com.parlantos.guild.models.entities.MessageEntity;
-import com.parlantos.guild.models.entities.TextChannelEntity;
-import com.parlantos.guild.repo.GuildRepo;
-import com.parlantos.guild.repo.MemberRepo;
-import com.parlantos.guild.repo.MessageRepo;
-import com.parlantos.guild.repo.TextChannelRepo;
+import com.parlantos.guild.models.entities.*;
+import com.parlantos.guild.repo.*;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
@@ -28,13 +23,16 @@ public class GuildService {
   private MessageRepo messageRepo;
   private TextChannelRepo textChannelRepo;
   private MemberRepo memberRepo;
+  private GuildMemberRepo guildMemberRepo;
 
-  GuildService(SnowflakeDto snowflakeDto, GuildRepo guildRepo, MessageRepo messageRepo, MemberRepo memberRepo, TextChannelRepo textChannelRepo) {
+  GuildService(SnowflakeDto snowflakeDto, GuildRepo guildRepo, MessageRepo messageRepo, MemberRepo memberRepo,
+               TextChannelRepo textChannelRepo, GuildMemberRepo guildMemberRepo) {
     this.snowflakeDto = snowflakeDto;
     this.guildRepo = guildRepo;
     this.messageRepo = messageRepo;
     this.memberRepo = memberRepo;
     this.textChannelRepo = textChannelRepo;
+    this.guildMemberRepo = guildMemberRepo;
   }
 
 
@@ -75,5 +73,17 @@ public class GuildService {
     textChannelEntity.setTitle(createTextChannelRequest.getTitle());
     textChannelEntity.setDescription(createTextChannelRequest.getDescription());
     return this.textChannelRepo.save(textChannelEntity);
+  }
+
+  public GuildMemberEntity addMemberToGuild(AddMemberRequest addMemberRequest) throws ValidationException {
+    BigInteger snowflakeId = this.snowflakeDto.getSnowflakeId().block();
+    GuildMemberEntity guildMemberEntity = new GuildMemberEntity();
+    guildMemberEntity.setId(snowflakeId);
+    GuildEntity guildEntity = this.guildRepo.findById(addMemberRequest.getGuildId()).orElseThrow(() -> new ValidationException("The guild id does not exist"));
+    MemberEntity memberEntity = this.memberRepo.findById(addMemberRequest.getMemberId()).orElseThrow(() -> new ValidationException("The member id does not exist"));
+    guildMemberEntity.setGuildEntity(guildEntity);
+    guildMemberEntity.setMemberEntity(memberEntity);
+    guildMemberEntity.setCreatedAt(LocalDateTime.now());
+    return this.guildMemberRepo.save(guildMemberEntity);
   }
 }

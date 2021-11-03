@@ -24,6 +24,14 @@ public class GuildMemberEntity {
   @Column(name = "created_at")
   private LocalDateTime createdAt;
 
+  public LocalDateTime getCreatedAt() {
+    return createdAt;
+  }
+
+  public void setCreatedAt(LocalDateTime createdAt) {
+    this.createdAt = createdAt;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;

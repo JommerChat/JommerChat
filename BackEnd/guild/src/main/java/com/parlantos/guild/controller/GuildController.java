@@ -1,12 +1,10 @@
 package com.parlantos.guild.controller;
 
+import com.parlantos.guild.models.AddMemberRequest;
 import com.parlantos.guild.models.CreateGuildRequest;
 import com.parlantos.guild.models.CreateMessageRequest;
 import com.parlantos.guild.models.CreateTextChannelRequest;
-import com.parlantos.guild.models.entities.GuildEntity;
-import com.parlantos.guild.models.entities.MemberEntity;
-import com.parlantos.guild.models.entities.MessageEntity;
-import com.parlantos.guild.models.entities.TextChannelEntity;
+import com.parlantos.guild.models.entities.*;
 import com.parlantos.guild.repo.MemberRepo;
 import com.parlantos.guild.service.GuildService;
 import org.springframework.http.HttpStatus;
@@ -36,6 +34,11 @@ public class GuildController {
   public ResponseEntity<List<MemberEntity>> getMembers() {
     List<MemberEntity> members = (List<MemberEntity>) this.memberRepo.findAll();
     return new ResponseEntity<>(members, HttpStatus.OK);
+  }
+
+  @PostMapping("/addMemberToGuild")
+  public ResponseEntity<GuildMemberEntity> addMemberToGuild(@RequestBody AddMemberRequest addMemberRequest) throws ValidationException {
+    return new ResponseEntity<>(this.guildService.addMemberToGuild(addMemberRequest), HttpStatus.OK);
   }
 
   @PostMapping("/createGuild")
