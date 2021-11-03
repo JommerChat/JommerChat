@@ -5,17 +5,18 @@ import com.parlantos.guild.models.CreateGuildRequest;
 import com.parlantos.guild.models.CreateMessageRequest;
 import com.parlantos.guild.models.CreateTextChannelRequest;
 import com.parlantos.guild.models.entities.*;
+import com.parlantos.guild.repo.GuildMemberRepo;
+import com.parlantos.guild.repo.GuildRepo;
 import com.parlantos.guild.repo.MemberRepo;
 import com.parlantos.guild.service.GuildService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.xml.bind.ValidationException;
+import java.math.BigInteger;
+import java.util.LinkedList;
 import java.util.List;
 
 @Controller
@@ -23,17 +24,24 @@ import java.util.List;
 public class GuildController {
 
   private MemberRepo memberRepo;
+  private GuildMemberRepo guildMemberRepo;
   private GuildService guildService;
+  private GuildRepo guildRepo;
 
-  GuildController(MemberRepo memberRepo, GuildService guildService) {
+  GuildController(MemberRepo memberRepo, GuildService guildService, GuildMemberRepo guildMemberRepo, GuildRepo guildRepo) {
     this.memberRepo = memberRepo;
     this.guildService = guildService;
+    this.guildMemberRepo = guildMemberRepo;
+    this.guildRepo = guildRepo;
   }
 
   @GetMapping("/members")
-  public ResponseEntity<List<MemberEntity>> getMembers() {
-    List<MemberEntity> members = (List<MemberEntity>) this.memberRepo.findAll();
-    return new ResponseEntity<>(members, HttpStatus.OK);
+  public ResponseEntity<List<MemberEntity>> getMembers(@RequestParam String id) throws ValidationException {
+    GuildEntity guildEntity = this.guildRepo.findById(new BigInteger(id)).orElseThrow(() -> new ValidationException("The guild id does not exist"));
+    List<GuildMemberEntity> guildMemberEntities = this.guildMemberRepo.findAllByGuildEntity(guildEntity);
+    List<MemberEntity> memberEntities = new LinkedList<>();
+    guildMemberEntities.forEach(member -> memberEntities.add(member.getMemberEntity()));
+    return new ResponseEntity<>(memberEntities, HttpStatus.OK);
   }
 
   @PostMapping("/addMemberToGuild")
