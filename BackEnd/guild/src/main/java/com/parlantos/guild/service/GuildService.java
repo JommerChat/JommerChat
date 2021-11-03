@@ -1,15 +1,10 @@
 package com.parlantos.guild.service;
 
 import com.parlantos.guild.dto.SnowflakeDto;
-import com.parlantos.guild.models.AddMemberRequest;
-import com.parlantos.guild.models.CreateGuildRequest;
-import com.parlantos.guild.models.CreateMessageRequest;
-import com.parlantos.guild.models.CreateTextChannelRequest;
+import com.parlantos.guild.models.*;
 import com.parlantos.guild.models.entities.*;
 import com.parlantos.guild.repo.*;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
-import reactor.core.publisher.Mono;
 
 import javax.xml.bind.ValidationException;
 import java.math.BigInteger;
@@ -22,17 +17,19 @@ public class GuildService {
   private GuildRepo guildRepo;
   private MessageRepo messageRepo;
   private TextChannelRepo textChannelRepo;
+  private VoiceChannelRepo voiceChannelRepo;
   private MemberRepo memberRepo;
   private GuildMemberRepo guildMemberRepo;
 
   GuildService(SnowflakeDto snowflakeDto, GuildRepo guildRepo, MessageRepo messageRepo, MemberRepo memberRepo,
-               TextChannelRepo textChannelRepo, GuildMemberRepo guildMemberRepo) {
+               TextChannelRepo textChannelRepo, GuildMemberRepo guildMemberRepo, VoiceChannelRepo voiceChannelRepo) {
     this.snowflakeDto = snowflakeDto;
     this.guildRepo = guildRepo;
     this.messageRepo = messageRepo;
     this.memberRepo = memberRepo;
     this.textChannelRepo = textChannelRepo;
     this.guildMemberRepo = guildMemberRepo;
+    this.voiceChannelRepo = voiceChannelRepo;
   }
 
 
@@ -85,5 +82,16 @@ public class GuildService {
     guildMemberEntity.setMemberEntity(memberEntity);
     guildMemberEntity.setCreatedAt(LocalDateTime.now());
     return this.guildMemberRepo.save(guildMemberEntity);
+  }
+
+  public VoiceChannelEntity createVoiceChannel(CreateVoiceChannelRequest createVoiceChannelRequest) throws ValidationException {
+    BigInteger snowflakeId = this.snowflakeDto.getSnowflakeId().block();
+    VoiceChannelEntity voiceChannelEntity = new VoiceChannelEntity();
+    voiceChannelEntity.setId(snowflakeId);
+    voiceChannelEntity.setCreatedAt(LocalDateTime.now());
+    GuildEntity guildEntity = this.guildRepo.findById(createVoiceChannelRequest.getGuildId()).orElseThrow(() -> new ValidationException("The guild id does not exist"));
+    voiceChannelEntity.setGuildEntity(guildEntity);
+    voiceChannelEntity.setTitle(createVoiceChannelRequest.getTitle());
+    return this.voiceChannelRepo.save(voiceChannelEntity);
   }
 }

@@ -1,9 +1,6 @@
 package com.parlantos.guild.controller;
 
-import com.parlantos.guild.models.AddMemberRequest;
-import com.parlantos.guild.models.CreateGuildRequest;
-import com.parlantos.guild.models.CreateMessageRequest;
-import com.parlantos.guild.models.CreateTextChannelRequest;
+import com.parlantos.guild.models.*;
 import com.parlantos.guild.models.entities.*;
 import com.parlantos.guild.repo.GuildMemberRepo;
 import com.parlantos.guild.repo.GuildRepo;
@@ -62,6 +59,11 @@ public class GuildController {
   @PostMapping("/createTextChannel")
   public ResponseEntity<TextChannelEntity> createTextChannel(@RequestBody CreateTextChannelRequest createTextChannelRequest) throws ValidationException {
     return new ResponseEntity<>(this.guildService.createTextChannel(createTextChannelRequest), HttpStatus.OK);
+  }
+
+  @PostMapping("/createVoiceChannel")
+  public ResponseEntity<VoiceChannelEntity> createVoiceChannel(@RequestBody CreateVoiceChannelRequest createVoiceChannelRequest) throws ValidationException {
+    return new ResponseEntity<>(this.guildService.createVoiceChannel(createVoiceChannelRequest), HttpStatus.OK);
   }
 
 }
