@@ -41,6 +41,18 @@ public class GuildController {
     return new ResponseEntity<>(memberEntities, HttpStatus.OK);
   }
 
+  @GetMapping("/{textChannelId}/messages")
+  public ResponseEntity<List<MessageEntity>> getMessages(@RequestParam String amount, @RequestParam(required = false) String startingId,
+                                                         @PathVariable String textChannelId) {
+    return new ResponseEntity<>(this.guildService.getMessages(amount, textChannelId, startingId), HttpStatus.OK);
+  }
+
+  @GetMapping("/{guildId}/textChannels")
+  public ResponseEntity<List<TextChannelEntity>> getTextChannelsInGuild(@PathVariable String guildId) throws ValidationException {
+    return new ResponseEntity<>(this.guildService.getTextChannelsInGuild(guildId), HttpStatus.OK);
+  }
+
+
   @PostMapping("/addMemberToGuild")
   public ResponseEntity<GuildMemberEntity> addMemberToGuild(@RequestBody AddMemberRequest addMemberRequest) throws ValidationException {
     return new ResponseEntity<>(this.guildService.addMemberToGuild(addMemberRequest), HttpStatus.OK);

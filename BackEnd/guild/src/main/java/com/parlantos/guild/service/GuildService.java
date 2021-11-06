@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import javax.xml.bind.ValidationException;
 import java.math.BigInteger;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class GuildService {
@@ -93,5 +94,17 @@ public class GuildService {
     voiceChannelEntity.setGuildEntity(guildEntity);
     voiceChannelEntity.setTitle(createVoiceChannelRequest.getTitle());
     return this.voiceChannelRepo.save(voiceChannelEntity);
+  }
+
+  public List<MessageEntity> getMessages(String amount, String textChannelId, String startingId) {
+    if (startingId == null || startingId.isEmpty()) {
+      return this.messageRepo.findRecentMessagesWithLimit(new BigInteger(textChannelId), new BigInteger(amount));
+    }
+    return this.messageRepo.findMessageEntitiesByIdWithLimit(new BigInteger(startingId), new BigInteger(textChannelId), new BigInteger(amount));
+  }
+
+  public List<TextChannelEntity> getTextChannelsInGuild(String guildId) throws ValidationException {
+    GuildEntity guildEntity = this.guildRepo.findById(new BigInteger(guildId)).orElseThrow(() -> new ValidationException("The guild id does not exist"));
+    return this.textChannelRepo.findAllByGuildEntity(guildEntity);
   }
 }
