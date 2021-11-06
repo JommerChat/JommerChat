@@ -107,4 +107,9 @@ public class GuildService {
     GuildEntity guildEntity = this.guildRepo.findById(new BigInteger(guildId)).orElseThrow(() -> new ValidationException("The guild id does not exist"));
     return this.textChannelRepo.findAllByGuildEntity(guildEntity);
   }
+
+  public List<VoiceChannelEntity> getVoiceChannelsInGuild(String guildId) throws ValidationException {
+    GuildEntity guildEntity = this.guildRepo.findById(new BigInteger(guildId)).orElseThrow(() -> new ValidationException("The guild id does not exist"));
+    return this.voiceChannelRepo.findAllByGuildEntity(guildEntity);
+  }
 }
