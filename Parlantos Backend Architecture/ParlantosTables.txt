@@ -114,3 +114,19 @@ create table role_permission(
     foreign key(role_id) references role(id),
     foreign key(permission_id) references permission(id)
 );
+create table discord_text_channel(
+	discord_text_channel_id bigint,
+	text_channel_id bigint,
+	created_at timestamp,
+	getMessages boolean,
+	postMessages boolean,
+	foreign key(text_channel_id) references text_channel(id),
+	primary key(discord_text_channel_id, text_channel_id)
+);
+create table discord_message(
+	message_id bigint,
+	discord_message_id bigint,
+	created_at timestamp,
+	foreign key(message_id) references message(id),
+	primary key(message_id, discord_message_id)
+);

@@ -4,7 +4,6 @@ import com.parlantos.guild.models.*;
 import com.parlantos.guild.models.entities.*;
 import com.parlantos.guild.repo.GuildMemberRepo;
 import com.parlantos.guild.repo.GuildRepo;
-import com.parlantos.guild.repo.MemberRepo;
 import com.parlantos.guild.service.GuildService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,13 +19,11 @@ import java.util.List;
 @RequestMapping("/guild")
 public class GuildController {
 
-  private MemberRepo memberRepo;
   private GuildMemberRepo guildMemberRepo;
   private GuildService guildService;
   private GuildRepo guildRepo;
 
-  GuildController(MemberRepo memberRepo, GuildService guildService, GuildMemberRepo guildMemberRepo, GuildRepo guildRepo) {
-    this.memberRepo = memberRepo;
+  GuildController(GuildService guildService, GuildMemberRepo guildMemberRepo, GuildRepo guildRepo) {
     this.guildService = guildService;
     this.guildMemberRepo = guildMemberRepo;
     this.guildRepo = guildRepo;
@@ -56,7 +53,6 @@ public class GuildController {
   public ResponseEntity<List<VoiceChannelEntity>> getVoiceChannelsInGuild(@PathVariable String guildId) throws ValidationException {
     return new ResponseEntity<>(this.guildService.getVoiceChannelsInGuild(guildId), HttpStatus.OK);
   }
-
 
   @PostMapping("/addMemberToGuild")
   public ResponseEntity<GuildMemberEntity> addMemberToGuild(@RequestBody AddMemberRequest addMemberRequest) throws ValidationException {
