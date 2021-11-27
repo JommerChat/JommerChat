@@ -11,26 +11,41 @@ export class ChannelsComponent implements OnInit {
 
   textChannels = [
     {
-    id: 1234,
-    created_at: new Date(),
-    guild_id: 1234,
-    title: 'general',
-    description: 'General chat',
-    categoryId: '',
-    position: 0
+      id: 1234,
+      created_at: new Date(),
+      guild_id: 1234,
+      title: 'general',
+      description: 'General chat',
+      categoryId: '',
+      position: 1,
+      selected: true
     },
     {
-    id: 1234,
-    created_at: new Date(),
-    guild_id: 1234,
-    title: 'memes',
-    description: 'Meme channel',
-    categoryId: '',
-    position: 1
+      id: 1234,
+      created_at: new Date(),
+      guild_id: 1234,
+      title: 'memes',
+      description: 'Meme channel',
+      categoryId: '',
+      position: 0,
+      selected: false
 }];
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.sortChannelsByPosition();
+  }
+
+  onChannelClicked(position: number) {
+    console.log(`Channel clicked with position: ${position}`);
+    this.textChannels.find(s => s.selected === true).selected = false;
+    this.textChannels.find(s => s.position === position).selected = true;
+    console.log(`Value of textChannels objects: ${JSON.stringify(this.textChannels)}`);
+  }
+
+  sortChannelsByPosition() {
+    this.textChannels.sort((a, b) => a.position - b.position);
+  }
 
 }

@@ -3,8 +3,11 @@
 </div>
 
 <div class="text-channel-section">
-  <span class="text-channel-span" *ngFor="let textChannel of textChannels">
+  <div *ngFor="let textChannel of textChannels" class="text-channel-container" (click)="onChannelClicked(textChannel.position)"
+    [ngClass]="{'channel-selected': textChannel.selected}">
+    <span class="text-channel-span">
     # {{textChannel.title}}
-    <br/>
-  </span>
+      <br/>
+    </span>
+  </div>
 </div>
