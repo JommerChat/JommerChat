@@ -7,6 +7,9 @@ import { IonicModule } from '@ionic/angular';
 import { GuildPageRoutingModule } from './guild-routing.module';
 
 import { GuildPage } from './guild.page';
+import {ChannelsComponent} from './channels/channels.component';
+import {MessagesComponent} from './messages/messages.component';
+import {MembersComponent} from './members/members.component';
 
 @NgModule({
   imports: [
@@ -15,6 +18,6 @@ import { GuildPage } from './guild.page';
     IonicModule,
     GuildPageRoutingModule
   ],
-  declarations: [GuildPage]
+  declarations: [GuildPage, ChannelsComponent, MessagesComponent, MembersComponent]
 })
 export class GuildPageModule {}
