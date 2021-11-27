@@ -1,15 +1,9 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>guild</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <ion-grid>
-    <ion-row>
-      <ion-col><app-channels></app-channels></ion-col>
-      <ion-col><app-messages></app-messages></ion-col>
-      <ion-col><app-members></app-members></ion-col>
+  <ion-grid class="ion-no-padding guild-grid">
+    <ion-row class="ion-no-padding guild-row" style="height: 100%">
+      <ion-col class="ion-no-padding channel-col"><app-channels></app-channels></ion-col>
+      <ion-col class="ion-no-padding messages-col"><app-messages></app-messages></ion-col>
+      <ion-col class="ion-no-padding members-col"><app-members></app-members></ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>

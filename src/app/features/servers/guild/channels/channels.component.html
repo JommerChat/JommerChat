@@ -1,3 +1,10 @@
-<p>
-  channels works!
-</p>
+<div class="channels-header-div">
+  <h1 class="guild-name">{{guildName}}</h1>
+</div>
+
+<div class="text-channel-section">
+  <span class="text-channel-span" *ngFor="let textChannel of textChannels">
+    # {{textChannel.title}}
+    <br/>
+  </span>
+</div>
