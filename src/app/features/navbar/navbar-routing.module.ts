@@ -25,7 +25,7 @@ const routes: Routes = [
       },
       {
         path: 'server/:serverId',
-        loadChildren: () => import('./../servers/servers.module').then(m => m.ServersPageModule)
+        loadChildren: () => import('./../servers/guild/guild.module').then(m => m.GuildPageModule)
       }
     ]
   }

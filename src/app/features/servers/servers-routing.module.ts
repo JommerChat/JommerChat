@@ -7,7 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: ServersPage
+  },  {
+    path: 'guild',
+    loadChildren: () => import('./guild/guild.module').then( m => m.GuildPageModule)
   }
+
 ];
 
 @NgModule({

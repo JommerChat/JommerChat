@@ -39,7 +39,8 @@ const routes: Routes = [
   {
     path: 'create-account',
     loadChildren: () => import('./features/login/create-account/create-account.module').then( m => m.CreateAccountPageModule)
-  },
+  }
+
 
 
 
