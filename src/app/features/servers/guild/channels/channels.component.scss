@@ -1,9 +1,13 @@
 .guild-name {
   margin-top: 5px;
+  margin-left: 10px;
+  margin-bottom: 3px;
+  font-size: 24px;
 }
 
 .text-channel-section {
   margin-left: 10px;
+  margin-top: 5px;
 }
 
 .text-channel-span {
@@ -25,4 +29,38 @@
 
 .channel-selected {
   background-color: var(--ion-color-medium) !important;
+}
+
+.messages-col {
+  background-color: var(--ion-color-tertiary);
+}
+
+.channels-grid {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.channels-row {
+  height: 100%;
+}
+
+.channels-col {
+  flex: 0 0 auto;
+  width: 300px;
+}
+
+.channels-header-div {
+  display: flex;
+  align-items: center;
+  border-bottom-color: var(--ion-color-secondary-contrast);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  height: 50px;
+}
+
+.channels-header-icon {
+  margin-left: auto;
+  font-size: 24px;
+  margin-right: 10px;
 }

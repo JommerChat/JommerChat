@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-guild',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GuildPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.router.navigate(['channel', '5'], {relativeTo: this.route});
   }
 
 }
