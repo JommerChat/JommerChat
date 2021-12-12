@@ -57,10 +57,37 @@
   border-bottom-width: 1px;
   border-bottom-style: solid;
   height: 50px;
+  cursor: pointer;
+}
+
+.channels-header-div:hover {
+  background-color: var(--ion-color-secondary-tint);
 }
 
 .channels-header-icon {
   margin-left: auto;
   font-size: 24px;
   margin-right: 10px;
+  transition: transform 150ms ease-in-out;
+}
+
+.channel-header-selected {
+  background-color: var(--ion-color-secondary-shade) !important;
+}
+
+.channel-header-icon-selected {
+  transform: rotate(90deg);
+}
+
+.channel-header-menu {
+  background-color: var(--ion-color-lightdark);
+  position: absolute;
+  height: 50%;
+  width: 90%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  border-radius: 10px;
 }

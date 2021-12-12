@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ChannelsComponent implements OnInit {
 
   guildName = 'Test Name';
+  channelHeaderMenuOpen = false;
 
   textChannels = [
     {
@@ -46,6 +47,10 @@ export class ChannelsComponent implements OnInit {
 
   sortChannelsByPosition() {
     this.textChannels.sort((a, b) => a.position - b.position);
+  }
+
+  channelHeaderClicked() {
+    this.channelHeaderMenuOpen = !this.channelHeaderMenuOpen;
   }
 
 }

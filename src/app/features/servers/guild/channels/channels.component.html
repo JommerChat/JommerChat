@@ -1,9 +1,13 @@
 <ion-grid class="channels-grid">
   <ion-row class="channels-row">
     <ion-col class="channels-col">
-      <div class="channels-header-div">
+      <div class="channels-header-div" (click)="channelHeaderClicked()" [ngClass]="{'channel-header-selected': channelHeaderMenuOpen}">
         <h1 class="guild-name">{{guildName}}</h1>
-        <ion-icon name="chevron-down-outline" class="channels-header-icon"></ion-icon>
+        <ion-icon name="chevron-down-outline" class="channels-header-icon" [ngClass]="{'channel-header-icon-selected': channelHeaderMenuOpen}"></ion-icon>
+      </div>
+
+      <div *ngIf="channelHeaderMenuOpen" class="channel-header-menu">
+        <span>Server settings options go here</span>
       </div>
 
       <div class="text-channel-section">
