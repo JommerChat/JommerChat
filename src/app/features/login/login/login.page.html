@@ -27,7 +27,7 @@
                         <ion-label position="floating">
                           <h2>Password</h2>
                         </ion-label>
-                        <ion-input type="password" id="password" formControlName="password"></ion-input>
+                        <ion-input type="password" id="password" formControlName="password" (keydown.enter)="submitLogin()" (ionChange)="invalidPassword = false"></ion-input>
                       </ion-item>
                       <ng-container *ngIf="password.touched && password.errors?.required">
                         <div class="form-error">Please enter your password.</div>
@@ -39,7 +39,14 @@
                   </ion-row>
                   <ion-row class="ion-justify-content-center">
                     <ion-col class="ion-text-center" size="4">
-                      <ion-button (click)="submitLogin()" class="ion-margin-bottom" color="light" expand="block" [disabled]="loginGroup.invalid">Sign In</ion-button>
+                      <ion-button (click)="submitLogin()" class="ion-margin-bottom" color="light" expand="block" [disabled]="loginGroup.invalid">
+                        <ng-container *ngIf="submitInProgress">
+                          <ion-spinner></ion-spinner>
+                        </ng-container>
+                        <ng-container *ngIf="!submitInProgress">
+                          Sign In
+                        </ng-container>
+                      </ion-button>
                     </ion-col>
                   </ion-row>
                 </ion-grid>

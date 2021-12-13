@@ -22,7 +22,7 @@ export class ChannelsComponent implements OnInit {
       selected: true
     },
     {
-      id: 1234,
+      id: 12345,
       created_at: new Date(),
       guild_id: 1234,
       title: 'memes',

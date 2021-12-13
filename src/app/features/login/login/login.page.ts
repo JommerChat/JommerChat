@@ -16,8 +16,10 @@ export class LoginPage implements OnInit {
   public loginGroup: FormGroup;
 
   public invalidPassword = false;
+  submitInProgress = false;
 
   async ngOnInit() {
+    this.submitInProgress = false;
     this.loginGroup = new FormGroup({
       username: new FormControl(null, [Validators.required]),
       password: new FormControl(null, [Validators.required])
@@ -38,9 +40,11 @@ export class LoginPage implements OnInit {
 
   async submitLogin() {
     try {
+      this.submitInProgress = true;
       await this.authService.login(this.username.value, this.password.value);
     } catch (error) {
       this.invalidPassword = true;
+      this.submitInProgress = false;
     }
   }
 
