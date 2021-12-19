@@ -7,7 +7,8 @@ export const environment = {
   issuer: 'https://dev-75166832.okta.com',
   clientId: '0oa156czptZmhqdrv5d7',
   redirectUri: 'http://localhost:8100/login/callback',
-  scopes: 'openid profile email'
+  scopes: 'openid profile email',
+  guildOrchBaseUrl: 'http://localhost:8080/guild'
 };
 
 /*
