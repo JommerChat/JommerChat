@@ -1,10 +1,10 @@
-import {Members} from './Members';
+import {Member} from './Member';
 import {TextChannel} from './TextChannel';
 import {VoiceChannel} from './VoiceChannel';
 import {Messages} from './Messages';
 
 export interface GuildInfo {
-  members: Members;
+  members: Member;
   textChannels: TextChannel[];
   voiceChannels: VoiceChannel[];
   currentTextChannelIndex: number;

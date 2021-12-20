@@ -1,10 +1,9 @@
-import {Members} from './Members';
-import {TextChannel} from './TextChannel';
+import {Member} from './Member';
 
 export interface Messages {
   id: BigInteger;
   createdAt: string;
+  attachments?: string[];
   content: string;
-  memberEntity: Members;
-  textChannelEntity: TextChannel;
+  memberEntity: Member;
 }
