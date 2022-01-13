@@ -24,7 +24,9 @@
         "publicFlag": null
       },
       "title": "text_channel",
-      "description": "A test of the createTextChannel endpoint"
+      "description": "A test of the createTextChannel endpoint",
+      "position": 0,
+      "selected": true
     },
     {
       "id": 68525085501136896,
@@ -39,7 +41,9 @@
         "publicFlag": null
       },
       "title": "text_channel2",
-      "description": "A test of the createTextChannel endpoint"
+      "description": "A test of the createTextChannel endpoint",
+      "position": 2,
+      "selected": false
     },
     {
       "id": 68525100948758528,
@@ -54,7 +58,9 @@
         "publicFlag": null
       },
       "title": "text_channel3",
-      "description": "A test of the createTextChannel endpoint"
+      "description": "A test of the createTextChannel endpoint",
+      "position": 1,
+      "selected": false
     },
     {
       "id": 68525142635945984,
@@ -69,7 +75,9 @@
         "publicFlag": null
       },
       "title": "text_channel4",
-      "description": "A test of the createTextChannel endpoint"
+      "description": "A test of the createTextChannel endpoint",
+      "position": 3,
+      "selected": false
     }
   ],
   "voiceChannels": [
@@ -107,7 +115,7 @@
     {
       "id": 67401230464294912,
       "createdAt": "2021-11-02T19:48:25.596756",
-      "content": "test message",
+      "content": "Really long message Really long message Really long message Really long message Really long message Really long message Really long message Really long message Really long message Really long message Really long message Really long message Really long message Really long message Really long message Really long message Really long message Really long message Really long message Really long message Really long message Really long message Really long message Really long message Really long message Really long message Really long message Really long message Really long message Really long message Really long message Really long message Really long message Really long message Really long message Really long message Really long message Really long message Really long message Really long message Really long message Really long message ",
       "memberEntity": {
         "id": 48893984008007680,
         "username": "HaZe",
@@ -527,6 +535,288 @@
       "id": 67737932017934336,
       "createdAt": "2021-11-03T18:06:21.499275",
       "content": "test message",
+      "memberEntity": {
+        "id": 48893984008007680,
+        "username": "HaZe",
+        "displayName": "HaZe",
+        "nameTag": "1",
+        "createdAt": "2021-09-12T18:09:41.930652",
+        "email": "bressetteprogramming@gmail.com",
+        "oktaId": "00u154plb3z316ere5d7",
+        "avatar": "https://cdn.parlantos.com/kixstar.jpg"
+      }
+    },
+    {
+      "id": 67737930117914624,
+      "createdAt": "2021-11-03T18:06:21.0459",
+      "content": "test message",
+      "memberEntity": {
+        "id": 48893984008007680,
+        "username": "HaZe",
+        "displayName": "HaZe",
+        "nameTag": "1",
+        "createdAt": "2021-09-12T18:09:41.930652",
+        "email": "bressetteprogramming@gmail.com",
+        "oktaId": "00u154plb3z316ere5d7",
+        "avatar": "https://cdn.parlantos.com/kixstar.jpg"
+      }
+    },{
+      "id": 67737930117914624,
+      "createdAt": "2021-11-03T18:06:21.0459",
+      "content": "test message",
+      "memberEntity": {
+        "id": 48893984008007680,
+        "username": "HaZe",
+        "displayName": "HaZe",
+        "nameTag": "1",
+        "createdAt": "2021-09-12T18:09:41.930652",
+        "email": "bressetteprogramming@gmail.com",
+        "oktaId": "00u154plb3z316ere5d7",
+        "avatar": "https://cdn.parlantos.com/kixstar.jpg"
+      }
+    },{
+      "id": 67737930117914624,
+      "createdAt": "2021-11-03T18:06:21.0459",
+      "content": "test message",
+      "memberEntity": {
+        "id": 48893984008007680,
+        "username": "HaZe",
+        "displayName": "HaZe",
+        "nameTag": "1",
+        "createdAt": "2021-09-12T18:09:41.930652",
+        "email": "bressetteprogramming@gmail.com",
+        "oktaId": "00u154plb3z316ere5d7",
+        "avatar": "https://cdn.parlantos.com/kixstar.jpg"
+      }
+    },{
+      "id": 67737930117914624,
+      "createdAt": "2021-11-03T18:06:21.0459",
+      "content": "test message",
+      "memberEntity": {
+        "id": 48893984008007680,
+        "username": "HaZe",
+        "displayName": "HaZe",
+        "nameTag": "1",
+        "createdAt": "2021-09-12T18:09:41.930652",
+        "email": "bressetteprogramming@gmail.com",
+        "oktaId": "00u154plb3z316ere5d7",
+        "avatar": "https://cdn.parlantos.com/kixstar.jpg"
+      }
+    },{
+      "id": 67737930117914624,
+      "createdAt": "2021-11-03T18:06:21.0459",
+      "content": "test message",
+      "memberEntity": {
+        "id": 48893984008007680,
+        "username": "HaZe",
+        "displayName": "HaZe",
+        "nameTag": "1",
+        "createdAt": "2021-09-12T18:09:41.930652",
+        "email": "bressetteprogramming@gmail.com",
+        "oktaId": "00u154plb3z316ere5d7",
+        "avatar": "https://cdn.parlantos.com/kixstar.jpg"
+      }
+    },{
+      "id": 67737930117914624,
+      "createdAt": "2021-11-03T18:06:21.0459",
+      "content": "test message",
+      "memberEntity": {
+        "id": 48893984008007680,
+        "username": "HaZe",
+        "displayName": "HaZe",
+        "nameTag": "1",
+        "createdAt": "2021-09-12T18:09:41.930652",
+        "email": "bressetteprogramming@gmail.com",
+        "oktaId": "00u154plb3z316ere5d7",
+        "avatar": "https://cdn.parlantos.com/kixstar.jpg"
+      }
+    },{
+      "id": 67737930117914624,
+      "createdAt": "2021-11-03T18:06:21.0459",
+      "content": "test message",
+      "memberEntity": {
+        "id": 48893984008007680,
+        "username": "HaZe",
+        "displayName": "HaZe",
+        "nameTag": "1",
+        "createdAt": "2021-09-12T18:09:41.930652",
+        "email": "bressetteprogramming@gmail.com",
+        "oktaId": "00u154plb3z316ere5d7",
+        "avatar": "https://cdn.parlantos.com/kixstar.jpg"
+      }
+    },{
+      "id": 67737930117914624,
+      "createdAt": "2021-11-03T18:06:21.0459",
+      "content": "test message",
+      "memberEntity": {
+        "id": 48893984008007680,
+        "username": "HaZe",
+        "displayName": "HaZe",
+        "nameTag": "1",
+        "createdAt": "2021-09-12T18:09:41.930652",
+        "email": "bressetteprogramming@gmail.com",
+        "oktaId": "00u154plb3z316ere5d7",
+        "avatar": "https://cdn.parlantos.com/kixstar.jpg"
+      }
+    },{
+      "id": 67737930117914624,
+      "createdAt": "2021-11-03T18:06:21.0459",
+      "content": "test message",
+      "memberEntity": {
+        "id": 48893984008007680,
+        "username": "HaZe",
+        "displayName": "HaZe",
+        "nameTag": "1",
+        "createdAt": "2021-09-12T18:09:41.930652",
+        "email": "bressetteprogramming@gmail.com",
+        "oktaId": "00u154plb3z316ere5d7",
+        "avatar": "https://cdn.parlantos.com/kixstar.jpg"
+      }
+    },{
+      "id": 67737930117914624,
+      "createdAt": "2021-11-03T18:06:21.0459",
+      "content": "test message",
+      "memberEntity": {
+        "id": 48893984008007680,
+        "username": "HaZe",
+        "displayName": "HaZe",
+        "nameTag": "1",
+        "createdAt": "2021-09-12T18:09:41.930652",
+        "email": "bressetteprogramming@gmail.com",
+        "oktaId": "00u154plb3z316ere5d7",
+        "avatar": "https://cdn.parlantos.com/kixstar.jpg"
+      }
+    },{
+      "id": 67737930117914624,
+      "createdAt": "2021-11-03T18:06:21.0459",
+      "content": "test message",
+      "memberEntity": {
+        "id": 48893984008007680,
+        "username": "HaZe",
+        "displayName": "HaZe",
+        "nameTag": "1",
+        "createdAt": "2021-09-12T18:09:41.930652",
+        "email": "bressetteprogramming@gmail.com",
+        "oktaId": "00u154plb3z316ere5d7",
+        "avatar": "https://cdn.parlantos.com/kixstar.jpg"
+      }
+    },{
+      "id": 67737930117914624,
+      "createdAt": "2021-11-03T18:06:21.0459",
+      "content": "test message",
+      "memberEntity": {
+        "id": 48893984008007680,
+        "username": "HaZe",
+        "displayName": "HaZe",
+        "nameTag": "1",
+        "createdAt": "2021-09-12T18:09:41.930652",
+        "email": "bressetteprogramming@gmail.com",
+        "oktaId": "00u154plb3z316ere5d7",
+        "avatar": "https://cdn.parlantos.com/kixstar.jpg"
+      }
+    },{
+      "id": 67737930117914624,
+      "createdAt": "2021-11-03T18:06:21.0459",
+      "content": "test message",
+      "memberEntity": {
+        "id": 48893984008007680,
+        "username": "HaZe",
+        "displayName": "HaZe",
+        "nameTag": "1",
+        "createdAt": "2021-09-12T18:09:41.930652",
+        "email": "bressetteprogramming@gmail.com",
+        "oktaId": "00u154plb3z316ere5d7",
+        "avatar": "https://cdn.parlantos.com/kixstar.jpg"
+      }
+    },{
+      "id": 67737930117914624,
+      "createdAt": "2021-11-03T18:06:21.0459",
+      "content": "test message",
+      "memberEntity": {
+        "id": 48893984008007680,
+        "username": "HaZe",
+        "displayName": "HaZe",
+        "nameTag": "1",
+        "createdAt": "2021-09-12T18:09:41.930652",
+        "email": "bressetteprogramming@gmail.com",
+        "oktaId": "00u154plb3z316ere5d7",
+        "avatar": "https://cdn.parlantos.com/kixstar.jpg"
+      }
+    },{
+      "id": 67737930117914624,
+      "createdAt": "2021-11-03T18:06:21.0459",
+      "content": "test message",
+      "memberEntity": {
+        "id": 48893984008007680,
+        "username": "HaZe",
+        "displayName": "HaZe",
+        "nameTag": "1",
+        "createdAt": "2021-09-12T18:09:41.930652",
+        "email": "bressetteprogramming@gmail.com",
+        "oktaId": "00u154plb3z316ere5d7",
+        "avatar": "https://cdn.parlantos.com/kixstar.jpg"
+      }
+    },{
+      "id": 67737930117914624,
+      "createdAt": "2021-11-03T18:06:21.0459",
+      "content": "test message",
+      "memberEntity": {
+        "id": 48893984008007680,
+        "username": "HaZe",
+        "displayName": "HaZe",
+        "nameTag": "1",
+        "createdAt": "2021-09-12T18:09:41.930652",
+        "email": "bressetteprogramming@gmail.com",
+        "oktaId": "00u154plb3z316ere5d7",
+        "avatar": "https://cdn.parlantos.com/kixstar.jpg"
+      }
+    },{
+      "id": 67737930117914624,
+      "createdAt": "2021-11-03T18:06:21.0459",
+      "content": "test message",
+      "memberEntity": {
+        "id": 48893984008007680,
+        "username": "HaZe",
+        "displayName": "HaZe",
+        "nameTag": "1",
+        "createdAt": "2021-09-12T18:09:41.930652",
+        "email": "bressetteprogramming@gmail.com",
+        "oktaId": "00u154plb3z316ere5d7",
+        "avatar": "https://cdn.parlantos.com/kixstar.jpg"
+      }
+    },{
+      "id": 67737930117914624,
+      "createdAt": "2021-11-03T18:06:21.0459",
+      "content": "test message",
+      "memberEntity": {
+        "id": 48893984008007680,
+        "username": "HaZe",
+        "displayName": "HaZe",
+        "nameTag": "1",
+        "createdAt": "2021-09-12T18:09:41.930652",
+        "email": "bressetteprogramming@gmail.com",
+        "oktaId": "00u154plb3z316ere5d7",
+        "avatar": "https://cdn.parlantos.com/kixstar.jpg"
+      }
+    },{
+      "id": 67737930117914624,
+      "createdAt": "2021-11-03T18:06:21.0459",
+      "content": "test message",
+      "memberEntity": {
+        "id": 48893984008007680,
+        "username": "HaZe",
+        "displayName": "HaZe",
+        "nameTag": "1",
+        "createdAt": "2021-09-12T18:09:41.930652",
+        "email": "bressetteprogramming@gmail.com",
+        "oktaId": "00u154plb3z316ere5d7",
+        "avatar": "https://cdn.parlantos.com/kixstar.jpg"
+      }
+    },
+    {
+      "id": 67737930117914624,
+      "createdAt": "2021-11-03T18:06:21.0459",
+      "content": "new message",
       "memberEntity": {
         "id": 48893984008007680,
         "username": "HaZe",
