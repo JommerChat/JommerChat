@@ -1,5 +1,5 @@
 export interface Guild {
-  id: BigInteger;
+  id: string;
   createdAt: string;
   name: string;
   description?: string;

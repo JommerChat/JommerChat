@@ -1,17 +1,37 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
+import {Subscription} from 'rxjs';
+import {GuildService} from './guild.service';
 
 @Component({
   selector: 'app-guild',
   templateUrl: './guild.page.html',
   styleUrls: ['./guild.page.scss'],
 })
-export class GuildPage implements OnInit {
+export class GuildPage implements OnInit, OnDestroy {
 
-  constructor(private router: Router, private route: ActivatedRoute) { }
+  guildId: string;
+
+  paramMapSubscription: Subscription;
+
+
+  constructor(private router: Router, private route: ActivatedRoute, private guildService: GuildService) { }
 
   ngOnInit() {
-    this.router.navigate(['channel', '5'], {relativeTo: this.route});
+    this.paramMapSubscription = this.route.paramMap.subscribe( paramMap => {
+      this.guildId = paramMap.get('serverId');
+      this.guildService.manageGuildInfo(this.guildId);
+    });
+    this.guildService.guildData$.subscribe(result => {
+      if (result) {
+        const selectedId = result.get(this.guildId).textChannels.find(s => s.selected).id;
+        this.router.navigate(['channel', selectedId], {relativeTo: this.route});
+      }
+    });
+  }
+
+  ngOnDestroy() {
+    this.paramMapSubscription.unsubscribe();
   }
 
 }

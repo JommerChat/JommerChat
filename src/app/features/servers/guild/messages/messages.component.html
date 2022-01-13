@@ -1,3 +1,18 @@
-<p>
-  messages works!
-</p>
+<div class="container-div">
+  <ion-grid class="messages-grid">
+    <ion-row *ngFor="let i of messages" class="message-row">
+      <ion-col class="avatar-col">
+        <ion-avatar class="avatar-img">
+          <img src="https://cdn.parlantos.com/images/kixstar.jpg" alt="Profile Picture" class="avatar-img">
+        </ion-avatar>
+      </ion-col>
+      <ion-col class="message-body-col">
+        <div class="message-header-text">
+          <span class="author-text">{{i.memberEntity.displayName}}</span>
+          <span class="date-text">{{i.createdAt | date: 'MM/dd/YY h:mm a'}}</span>
+        </div>
+        <span class="message-content">{{i.content}}</span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>

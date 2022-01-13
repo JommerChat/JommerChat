@@ -5,5 +5,8 @@ export interface TextChannel {
   createdAt: string;
   guildEntity: Guild;
   title: string;
-  description: string;
+  description?: string;
+  categoryId?: string;
+  position?: number;
+  selected?: boolean;
 }
