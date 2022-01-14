@@ -3,5 +3,6 @@ export const environment = {
   issuer: 'https://dev-75166832.okta.com',
   clientId: '0oa156czptZmhqdrv5d7',
   redirectUri: 'https://parlantos.com/login/callback',
-  scopes: 'openid profile email'
+  scopes: 'openid profile email',
+  guildOrchBaseUrl: 'https://api.parlantos.com/guild'
 };
