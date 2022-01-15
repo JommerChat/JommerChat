@@ -8,6 +8,8 @@ import {Router} from '@angular/router';
 })
 export class NavbarPage implements OnInit {
 
+  displayCreateServerDialog = false;
+
   navTabSelectedList: boolean[] = [false, false, false, false, false, false];
 
   constructor(private router: Router) { }
@@ -40,6 +42,10 @@ export class NavbarPage implements OnInit {
       default:
         this.router.navigate(['navbar', 'server', index]);
     }
+  }
+
+  createServer() {
+    this.displayCreateServerDialog = true;
   }
 
 }
