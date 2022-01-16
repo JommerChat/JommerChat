@@ -105,10 +105,8 @@
     </ion-row>
   </ion-grid>
 
-<!--  <ng-container *ngIf="displayCreateServerDialog">-->
-    <div class="background-shadow" (click)="createServer()" *ngIf="displayCreateServerDialog"></div>
-    <app-create-server class="create-server-component" [ngClass]="{'collapse-animation': !displayCreateServerDialog, 'appear-animation': displayCreateServerDialog}"></app-create-server>
-<!--  </ng-container>-->
+  <div class="background-shadow" (click)="createServer()" *ngIf="displayCreateServerDialog"></div>
+  <app-create-server *ngIf="!removeCreateServerLayout" class="create-server-component" [ngClass]="{'collapse-animation': !displayCreateServerDialog, 'appear-animation': displayCreateServerDialog}"></app-create-server>
 
 
 </ion-content>

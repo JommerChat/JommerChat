@@ -6,7 +6,7 @@
       <p>Create a server where you can talk to everyone in your life.</p>
     </div>
     <ion-item color="primary" class="public-checkbox-item" lines="none">
-      <ion-checkbox class="public-checkbox" slot="start" color="lightdark"></ion-checkbox>
+      <ion-checkbox class="public-checkbox" slot="start" color="lightdark" [(ngModel)]="publicServerFlag"></ion-checkbox>
       <ion-label>Make Server Public</ion-label>
     </ion-item>
 
@@ -32,28 +32,37 @@
       </label>
       <input id="file-upload" type="file" (change)="onFileChange($event)">
     </div>
-    <form>
+    <form [formGroup]="serverFormGroup">
       <div class="server-name-container">
         <ion-item class="server-name-item" color="tertiary">
           <ion-label position="floating" class="server-name-label">
             <h2>Server Name</h2>
           </ion-label>
-          <ion-input type="text"></ion-input>
+          <ion-input type="text" formControlName="serverName"></ion-input>
         </ion-item>
+        <ng-container *ngIf="serverName.touched && serverName.errors?.required">
+          <div class="form-error">Please enter a server name</div>
+        </ng-container>
+        <ng-container *ngIf="serverName.errors?.maxlength">
+          <div class="form-error">The server name must be 50 characters or less</div>
+        </ng-container>
       </div>
       <div class="server-description-container">
         <ion-item class="server-description-item" color="tertiary">
           <ion-label position="floating" class="server-description-label">
             <h2>Server Description</h2>
           </ion-label>
-          <ion-textarea></ion-textarea>
+          <ion-textarea formControlName="serverDescription" autoGrow="true"></ion-textarea>
         </ion-item>
+        <ng-container *ngIf="serverDescription.errors?.maxlength">
+          <div class="form-error">The description must be 250 characters or less</div>
+        </ng-container>
       </div>
     </form>
 
     <div class="button-row-container">
       <ion-item class="buttons-item" lines="none">
-        <ion-button slot="start" size="medium">Back</ion-button>
+        <ion-button slot="start" size="medium" (click)="customizeServerBackClicked()">Back</ion-button>
         <ion-button slot="end" size="medium">Create</ion-button>
       </ion-item>
     </div>
