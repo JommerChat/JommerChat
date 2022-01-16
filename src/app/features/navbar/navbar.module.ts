@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { NavbarPageRoutingModule } from './navbar-routing.module';
 
 import { NavbarPage } from './navbar.page';
+import {CreateServerComponent} from '../servers/create-server/create-server.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { NavbarPage } from './navbar.page';
     IonicModule,
     NavbarPageRoutingModule
   ],
-  declarations: [NavbarPage]
+    declarations: [NavbarPage, CreateServerComponent]
 })
 export class NavbarPageModule {}

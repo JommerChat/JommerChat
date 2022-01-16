@@ -1,0 +1,64 @@
+
+<div class="container-div">
+  <ng-container *ngIf="!createServerDisplayed && !joinServerDisplayed">
+    <h1 class="create-server-header">Create a server</h1>
+    <div class="create-server-description-div">
+      <p>Create a server where you can talk to everyone in your life.</p>
+    </div>
+    <ion-item color="primary" class="public-checkbox-item" lines="none">
+      <ion-checkbox class="public-checkbox" slot="start" color="lightdark"></ion-checkbox>
+      <ion-label>Make Server Public</ion-label>
+    </ion-item>
+
+    <ion-button color="light" class = "join-server-button" shape="round" (click)="createAServerClicked()">Create a Server</ion-button>
+
+    <div id="header">
+      <h2 class="or-separator">or</h2>
+    </div>
+
+    <ion-button color="light" class = "join-server-button" shape="round">Join a Server</ion-button>
+  </ng-container>
+  <ng-container *ngIf="createServerDisplayed">
+    <h1 class="create-server-header">Customize your server</h1>
+    <div class="create-server-description-div">
+      <p>Make the server your own with a name, icon and description. You can change everything later.</p>
+    </div>
+    <div class="file-upload-container">
+      <label for="file-upload" class="icon-upload-label">
+        <div class="file-upload-contents-container">
+          <ion-icon name="camera-outline"></ion-icon>
+          <span class="upload-span">UPLOAD</span>
+        </div>
+      </label>
+      <input id="file-upload" type="file" (change)="onFileChange($event)">
+    </div>
+    <form>
+      <div class="server-name-container">
+        <ion-item class="server-name-item" color="tertiary">
+          <ion-label position="floating" class="server-name-label">
+            <h2>Server Name</h2>
+          </ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+      </div>
+      <div class="server-description-container">
+        <ion-item class="server-description-item" color="tertiary">
+          <ion-label position="floating" class="server-description-label">
+            <h2>Server Description</h2>
+          </ion-label>
+          <ion-textarea></ion-textarea>
+        </ion-item>
+      </div>
+    </form>
+
+    <div class="button-row-container">
+      <ion-item class="buttons-item" lines="none">
+        <ion-button slot="start" size="medium">Back</ion-button>
+        <ion-button slot="end" size="medium">Create</ion-button>
+      </ion-item>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="joinServerDisplayed">
+
+  </ng-container>
+</div>

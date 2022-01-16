@@ -8,7 +8,7 @@ import {Router} from '@angular/router';
 })
 export class NavbarPage implements OnInit {
 
-  displayCreateServerDialog = false;
+  displayCreateServerDialog = true;
 
   navTabSelectedList: boolean[] = [false, false, false, false, false, false];
 
@@ -45,7 +45,7 @@ export class NavbarPage implements OnInit {
   }
 
   createServer() {
-    this.displayCreateServerDialog = true;
+    this.displayCreateServerDialog = !this.displayCreateServerDialog;
   }
 
 }

@@ -1,0 +1,133 @@
+.create-server-header {
+  padding-top: 8px;
+}
+
+.container-div {
+  border-radius: 10px;
+  background-color: var(--ion-color-primary);
+  text-align: center;
+  height: 100%;
+}
+
+.public-checkbox-item {
+  border-radius: 10px;
+}
+
+.or-separator {
+  width: auto;
+  display: inline-block;
+  z-index: 3;
+  position: relative;
+  margin: 0;
+  vertical-align: middle;
+  background-color: var(--ion-color-primary);
+}
+
+#header {
+  width: 90%;
+  height: 50px;
+  margin-left: 5%;
+  text-align: center;
+  font-size: 28px;
+  position: relative;
+  background-color: var(--ion-color-primary);
+}
+
+#header:after {
+  content: '';
+  width: 100%;
+  border-top: solid 1px #fff;
+  position: absolute;
+  left: 0;
+  top: 45%;
+  z-index: 1;
+}
+
+.join-server-button {
+  width: 80%;
+  padding-bottom: 5px;
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+  text-transform: none;
+  font-size: 16px;
+}
+
+p {
+  width: 90%;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.create-server-description-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.public-checkbox {
+  margin-right: 16px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.icon-upload-label {
+  border: 2px solid var(--ion-color-light);
+  border-radius: 50%;
+  width: 80px;
+  cursor: pointer;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.file-upload-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}
+
+ion-icon {
+  font-size: 32px;
+}
+
+.upload-span {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.server-name-item {
+  --highlight-color-focused: var(--ion-color-light);
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.server-description-item {
+  --highlight-color-focused: var(--ion-color-light);
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.server-name-container {
+  margin-top: 5px;
+}
+
+.server-description-container {
+  margin-top: 10px;
+  color: var(--ion-color-primary-)
+}
+
+.buttons-item {
+  --background: var(--ion-color-primary-tint);
+  --min-height: 80px;
+  border-radius: 10px;
+}
+
+.button-row-container {
+  margin-top: 25px;
+}
+
