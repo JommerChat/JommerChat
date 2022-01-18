@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {CreateServerService} from '../servers/create-server/create-server.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,14 +9,26 @@ import {Router} from '@angular/router';
 })
 export class NavbarPage implements OnInit {
 
-  displayCreateServerDialog = true;
+  displayCreateServerDialog = false;
   removeCreateServerLayout = false;
 
   navTabSelectedList: boolean[] = [false, false, false, false, false, false];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private createServerService: CreateServerService) { }
 
   ngOnInit() {
+    this.createServerService.$createServerPopupStatus.subscribe(result => {
+      if (result !== this.displayCreateServerDialog) {
+        this.displayCreateServerDialog = !this.displayCreateServerDialog;
+        this.removeCreateServerLayout = false;
+
+        if (!this.displayCreateServerDialog) {
+          setTimeout(() => {
+            this.removeCreateServerLayout = true;
+          }, 500);
+        }
+      }
+    });
   }
 
   navTabClicked(index: number): void {
@@ -46,14 +59,7 @@ export class NavbarPage implements OnInit {
   }
 
   createServer() {
-    this.displayCreateServerDialog = !this.displayCreateServerDialog;
-    this.removeCreateServerLayout = false;
-
-    if (!this.displayCreateServerDialog) {
-      setTimeout(() => {
-        this.removeCreateServerLayout = true;
-      }, 500);
-    }
+    this.createServerService.createServerPopupStatus.next(!this.displayCreateServerDialog);
   }
 
 }

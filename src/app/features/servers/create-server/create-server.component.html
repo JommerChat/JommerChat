@@ -16,7 +16,7 @@
       <h2 class="or-separator">or</h2>
     </div>
 
-    <ion-button color="light" class = "join-server-button" shape="round">Join a Server</ion-button>
+    <ion-button color="light" class = "join-server-button" shape="round" (click)="joinAServerClicked()">Join a Server</ion-button>
   </ng-container>
   <ng-container *ngIf="createServerDisplayed">
     <h1 class="create-server-header">Customize your server</h1>
@@ -38,7 +38,7 @@
         <div class="form-error icon-form-error">Please upload a valid image</div>
       </ng-container>
     </div>
-    <form [formGroup]="serverFormGroup">
+    <form [formGroup]="createServerFormGroup">
       <div class="server-name-container">
         <ion-item class="server-name-item" color="tertiary">
           <ion-label position="floating" class="server-name-label">
@@ -74,6 +74,38 @@
     </div>
   </ng-container>
   <ng-container *ngIf="joinServerDisplayed">
-
+    <h1 class="create-server-header">Join a server</h1>
+    <div class="create-server-description-div">
+      <p>Enter an invite to join an existing server</p>
+    </div>
+    <form [formGroup]="joinServerFormGroup">
+      <div class="invite-link-container">
+        <ion-item class="server-name-item" color="tertiary">
+          <ion-label position="floating" class="server-name-label">
+            <h2>Invite Link <span class="required-span">*</span></h2>
+          </ion-label>
+          <ion-input type="text" formControlName="inviteLink"></ion-input>
+        </ion-item>
+        <ng-container *ngIf="inviteLink.touched && inviteLink.errors?.required">
+          <div class="form-error">You must enter an invite link</div>
+        </ng-container>
+        <ng-container *ngIf="inviteLink.touched && invalidInviteLink">
+          <div class="form-error">That invite link is expired</div>
+        </ng-container>
+      </div>
+    </form>
+    <h3>Don't have an invite?</h3>
+    <div class="find-server-container" (click)="findServerClicked()">
+      <ion-item class="find-server-item buttons-item" lines="none">
+        <ion-icon name="people-circle-outline" class="server-icon" slot="start"></ion-icon>
+        <span class="find-public-server-span">Find a public community in Servers</span>
+      </ion-item>
+    </div>
+    <div class="button-row-container">
+      <ion-item class="buttons-item" lines="none">
+        <ion-button slot="start" size="medium" (click)="joinServerBackClicked()">Back</ion-button>
+        <ion-button slot="end" size="medium">Join Server</ion-button>
+      </ion-item>
+    </div>
   </ng-container>
 </div>

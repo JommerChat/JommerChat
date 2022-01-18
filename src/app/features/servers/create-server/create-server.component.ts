@@ -1,6 +1,8 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {FileChangeEvent} from '@angular/compiler-cli/src/perform_watch';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
+import {CreateServerService} from './create-server.service';
 
 @Component({
   selector: 'app-create-server',
@@ -11,23 +13,28 @@ export class CreateServerComponent implements OnInit {
 
   publicServerFlag = false;
 
-  createServerDisplayed = true;
+  createServerDisplayed = false;
   joinServerDisplayed = false;
 
-  serverFormGroup: FormGroup;
+  createServerFormGroup: FormGroup;
+  joinServerFormGroup: FormGroup;
 
   imageToUpload: File;
   iconImageUrl: string | ArrayBuffer;
 
   invalidIconFileType = false;
+  invalidInviteLink = false;
 
 
-  constructor() { }
+  constructor(private router: Router, private createServerService: CreateServerService) { }
 
   ngOnInit() {
-    this.serverFormGroup = new FormGroup({
+    this.createServerFormGroup = new FormGroup({
       serverName: new FormControl(null, [Validators.required, Validators.maxLength(50)]),
       serverDescription: new FormControl(null, [Validators.maxLength(250)]),
+    });
+    this.joinServerFormGroup = new FormGroup({
+      inviteLink: new FormControl(null, [Validators.required])
     });
   }
 
@@ -37,6 +44,10 @@ export class CreateServerComponent implements OnInit {
 
   customizeServerBackClicked() {
     this.createServerDisplayed = false;
+  }
+
+  joinServerBackClicked() {
+    this.joinServerDisplayed = false;
   }
 
   onFileChange(event) {
@@ -54,11 +65,24 @@ export class CreateServerComponent implements OnInit {
   }
 
   get serverName() {
-    return this.serverFormGroup.get('serverName');
+    return this.createServerFormGroup.get('serverName');
   }
 
   get serverDescription() {
-    return this.serverFormGroup.get('serverDescription');
+    return this.createServerFormGroup.get('serverDescription');
+  }
+
+  get inviteLink() {
+    return this.joinServerFormGroup.get('inviteLink');
+  }
+
+  joinAServerClicked() {
+    this.joinServerDisplayed = true;
+  }
+
+  findServerClicked() {
+    this.router.navigateByUrl('/navbar/servers');
+    this.createServerService.createServerPopupStatus.next(false);
   }
 
 }

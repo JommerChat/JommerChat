@@ -159,3 +159,32 @@ ion-icon {
   flex-basis: 100%;
   text-align: center;
 }
+
+.required-span {
+  color: var(--ion-color-danger);
+}
+
+.invite-link-container {
+  margin-top: 10px;
+}
+
+.server-icon {
+  font-size: 48px;
+}
+
+.find-server-container {
+  width: 90%;
+  margin: 0 auto;
+  :hover {
+    cursor: pointer;
+    background-color: var(--ion-color-tertiary-shade);
+  }
+}
+
+.find-public-server-span {
+  margin-left: 16px;
+}
+
+.find-server-item:hover {
+  --background: var(--ion-color-tertiary-shade);
+}
