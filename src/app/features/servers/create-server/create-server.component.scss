@@ -74,9 +74,9 @@ input[type="file"] {
 .icon-upload-label {
   border: 2px solid var(--ion-color-light);
   border-radius: 50%;
-  width: 80px;
+  width: 70px;
   cursor: pointer;
-  height: 80px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -91,11 +91,15 @@ input[type="file"] {
 
 ion-icon {
   font-size: 32px;
+  display: block;
+  margin: 0 auto;
+  margin-top: -5px;
 }
 
 .upload-span {
   font-size: 12px;
   font-weight: bold;
+  display: block;
 }
 
 .server-name-item {
