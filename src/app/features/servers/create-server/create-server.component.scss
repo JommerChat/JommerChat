@@ -84,6 +84,7 @@ input[type="file"] {
 
 .file-upload-container {
   display: flex;
+  flex-flow: wrap;
   align-items: center;
   justify-content: center;
   height: 100px;
@@ -142,3 +143,19 @@ ion-icon {
   margin: 5px auto 0 auto;
 }
 
+.server-icon-avatar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+}
+
+.file-upload-contents-container {
+  position: relative;
+}
+
+.icon-form-error {
+  flex-basis: 100%;
+  text-align: center;
+}

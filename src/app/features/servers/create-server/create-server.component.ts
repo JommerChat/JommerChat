@@ -16,6 +16,11 @@ export class CreateServerComponent implements OnInit {
 
   serverFormGroup: FormGroup;
 
+  imageToUpload: File;
+  iconImageUrl: string | ArrayBuffer;
+
+  invalidIconFileType = false;
+
 
   constructor() { }
 
@@ -34,8 +39,18 @@ export class CreateServerComponent implements OnInit {
     this.createServerDisplayed = false;
   }
 
-  onFileChange(event: Event) {
-    // do file stuff here
+  onFileChange(event) {
+    if (event.target.files[0].type.includes('image')) {
+      this.invalidIconFileType = false;
+      this.imageToUpload = event.target.files[0];
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(this.imageToUpload);
+      fileReader.onload = (fileEvent) => {
+        this.iconImageUrl = fileEvent.target.result;
+      };
+    } else {
+      this.invalidIconFileType = true;
+    }
   }
 
   get serverName() {

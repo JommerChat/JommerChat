@@ -26,11 +26,17 @@
     <div class="file-upload-container">
       <label for="file-upload" class="icon-upload-label">
         <div class="file-upload-contents-container">
+          <ion-avatar class="server-icon-avatar">
+            <img [src]="iconImageUrl" *ngIf="iconImageUrl?.length > 0" alt="Server Icon">
+          </ion-avatar>
           <ion-icon name="camera-outline"></ion-icon>
           <span class="upload-span">UPLOAD</span>
         </div>
       </label>
       <input id="file-upload" type="file" (change)="onFileChange($event)">
+      <ng-container *ngIf="invalidIconFileType">
+        <div class="form-error icon-form-error">Please upload a valid image</div>
+      </ng-container>
     </div>
     <form [formGroup]="serverFormGroup">
       <div class="server-name-container">
