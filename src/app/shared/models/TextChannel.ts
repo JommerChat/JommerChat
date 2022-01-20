@@ -1,4 +1,5 @@
 import {Guild} from './Guild';
+import {Messages} from './Messages';
 
 export interface TextChannel {
   id: string;
@@ -9,4 +10,5 @@ export interface TextChannel {
   categoryId?: string;
   position?: number;
   selected?: boolean;
+  messages?: Messages;
 }

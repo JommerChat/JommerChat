@@ -22,7 +22,7 @@
         </ion-col>
         <ion-col size="0.5" class="header-avatar-column">
           <ion-avatar>
-            <img src="https://cdn.parlantos.com/images/kixstar.jpg" alt="avatar placeholder for styling">
+            <img src="https://cdn.discordapp.com/avatars/304475016936816640/a_7cde5bfd9549b15e98d17eb24d758593.webp?size=96" alt="avatar placeholder for styling">
           </ion-avatar>
         </ion-col>
       </ion-row>
@@ -81,6 +81,17 @@
                 <div (click)="navTabClicked(4)" [ngClass]="{ 'nav-tab-selected' : navTabSelectedList[4]}">
                   <ion-avatar class="server-icon" >
                     <img src="https://cdn.parlantos.com/images/kixstar.jpg" alt="test">
+                  </ion-avatar>
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="ion-margin-top" *ngFor="let server of displayedServer; let i = index">
+            <ion-col class="ion-no-padding">
+              <div>
+                <div (click)="navTabClicked(-1, server.id)" [ngClass]="{ 'nav-tab-selected' : server.selected}">
+                  <ion-avatar class="server-icon" >
+                    <img [src]="server.icon" alt="test">
                   </ion-avatar>
                 </div>
               </div>

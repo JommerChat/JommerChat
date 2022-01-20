@@ -8,5 +8,9 @@ export interface GuildInfo {
   textChannels: TextChannel[];
   voiceChannels: VoiceChannel[];
   currentTextChannelIndex: number;
-  messagesForCurrentChannel: Messages[];
+  messagesForCurrentChannel?: Messages[];
+  name: string;
+  icon: string;
+  description?: string;
+  id: string;
 }

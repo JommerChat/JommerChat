@@ -23,7 +23,7 @@ export class GuildPage implements OnInit, OnDestroy {
       this.guildService.manageGuildInfo(this.guildId);
     });
     this.guildService.guildData$.subscribe(result => {
-      if (result) {
+      if (result?.has(this.guildId)) {
         const selectedId = result.get(this.guildId).textChannels.find(s => s.selected).id;
         this.router.navigate(['channel', selectedId], {relativeTo: this.route});
       }

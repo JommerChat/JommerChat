@@ -32,7 +32,11 @@ export class GuildService {
   }
 
   fetchInitialGuildInfo(guildId: string): Observable < GuildInfo > {
-      return this.httpClient.get(`${environment.guildOrchBaseUrl}/initialInfo?guildId=${guildId}`) as Observable<GuildInfo>;
+    return this.httpClient.get(`${environment.guildOrchBaseUrl}/initialInfo?guildId=${guildId}`) as Observable<GuildInfo>;
+  }
+
+  fetchGuildsForMember(memberId: string): Observable<GuildInfo[]> {
+    return this.httpClient.get<GuildInfo[]>(`${environment.guildOrchBaseUrl}/fetchGuilds?memberId=${memberId}`);
   }
 
 
