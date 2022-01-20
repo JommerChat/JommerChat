@@ -12,6 +12,11 @@ app.get(`${baseUrl}/initialInfo`, async (req, resp) => {
   resp.json(initialInfo);
 });
 
+app.get(`${baseUrl}/fetchGuilds`, async(req, resp) => {
+  const fetchGuilds = JSON.parse(fs.readFileSync('/home/bressette/git/parlantos/LocalServer/MembersGuilds.json'));
+  resp.json(fetchGuilds);
+});
+
 app.listen(port, () => {
   console.log('Express Mock Web Server listening at port: ' + port);
 })

@@ -1,0 +1,594 @@
+[
+  {
+      "members": [
+        {
+          "id": 48893984008007680,
+          "username": "HaZe",
+          "displayName": "HaZe",
+          "nameTag": "1",
+          "createdAt": "2021-09-12T18:09:41.930652",
+          "email": "bressetteprogramming@gmail.com",
+          "oktaId": "00u154plb3z316ere5d7"
+        }
+      ],
+      "textChannels": [
+        {
+          "id": 67400212611571712,
+          "createdAt": "2021-11-02T19:44:26.384593",
+          "guildEntity": {
+            "id": 67397832729927680,
+            "createdAt": "2021-11-02T19:34:55.519701",
+            "name": "Test Server",
+            "description": "A test of the createGuild endpoint",
+            "image": null,
+            "discordGuildId": null,
+            "publicFlag": null
+          },
+          "title": "text_channel",
+          "description": "A test of the createTextChannel endpoint",
+          "position": 0,
+          "selected": true
+        },
+        {
+          "id": 68525085501136896,
+          "createdAt": "2021-11-05T22:14:13.538566",
+          "guildEntity": {
+            "id": 67397832729927680,
+            "createdAt": "2021-11-02T19:34:55.519701",
+            "name": "Test Server",
+            "description": "A test of the createGuild endpoint",
+            "image": null,
+            "discordGuildId": null,
+            "publicFlag": null
+          },
+          "title": "text_channel2",
+          "description": "A test of the createTextChannel endpoint",
+          "position": 2,
+          "selected": false
+        },
+        {
+          "id": 68525100948758528,
+          "createdAt": "2021-11-05T22:14:17.205841",
+          "guildEntity": {
+            "id": 67397832729927680,
+            "createdAt": "2021-11-02T19:34:55.519701",
+            "name": "Test Server",
+            "description": "A test of the createGuild endpoint",
+            "image": null,
+            "discordGuildId": null,
+            "publicFlag": null
+          },
+          "title": "text_channel3",
+          "description": "A test of the createTextChannel endpoint",
+          "position": 1,
+          "selected": false
+        },
+        {
+          "id": 68525142635945984,
+          "createdAt": "2021-11-05T22:14:27.144413",
+          "guildEntity": {
+            "id": 67397832729927680,
+            "createdAt": "2021-11-02T19:34:55.519701",
+            "name": "Test Server",
+            "description": "A test of the createGuild endpoint",
+            "image": null,
+            "discordGuildId": null,
+            "publicFlag": null
+          },
+          "title": "text_channel4",
+          "description": "A test of the createTextChannel endpoint",
+          "position": 3,
+          "selected": false
+        }
+      ],
+      "voiceChannels": [
+        {
+          "id": 67732951395180544,
+          "createdAt": "2021-11-03T17:46:34.0455",
+          "guildEntity": {
+            "id": 67397832729927680,
+            "createdAt": "2021-11-02T19:34:55.519701",
+            "name": "Test Server",
+            "description": "A test of the createGuild endpoint",
+            "image": null,
+            "discordGuildId": null,
+            "publicFlag": null
+          },
+          "title": "voice_channel"
+        },
+        {
+          "id": 68527951242567680,
+          "createdAt": "2021-11-05T22:25:36.764522",
+          "guildEntity": {
+            "id": 67397832729927680,
+            "createdAt": "2021-11-02T19:34:55.519701",
+            "name": "Test Server",
+            "description": "A test of the createGuild endpoint",
+            "image": null,
+            "discordGuildId": null,
+            "publicFlag": null
+          },
+          "title": "voice_channel2"
+        }
+      ],
+      "currentTextChannelIndex": 0,
+      "name": "Siege Pros",
+      "icon": "https://cdn.discordapp.com/icons/703429244117712946/3a53eb137dec03b12418145733fc64ee.webp?size=96",
+      "description": "Epic Server",
+      "id": "95662282482929660"
+    },
+    {
+    "members": [
+    {
+    "id": 48893984008007680,
+    "username": "HaZe",
+    "displayName": "HaZe",
+    "nameTag": "1",
+    "createdAt": "2021-09-12T18:09:41.930652",
+    "email": "bressetteprogramming@gmail.com",
+    "oktaId": "00u154plb3z316ere5d7"
+    }
+    ],
+    "textChannels": [
+    {
+    "id": 67400212611571712,
+    "createdAt": "2021-11-02T19:44:26.384593",
+    "guildEntity": {
+    "id": 67397832729927680,
+    "createdAt": "2021-11-02T19:34:55.519701",
+    "name": "Test Server",
+    "description": "A test of the createGuild endpoint",
+    "image": null,
+    "discordGuildId": null,
+    "publicFlag": null
+    },
+    "title": "text_channel",
+    "description": "A test of the createTextChannel endpoint",
+    "position": 0,
+    "selected": true
+    },
+    {
+    "id": 68525085501136896,
+    "createdAt": "2021-11-05T22:14:13.538566",
+    "guildEntity": {
+    "id": 67397832729927680,
+    "createdAt": "2021-11-02T19:34:55.519701",
+    "name": "Test Server",
+    "description": "A test of the createGuild endpoint",
+    "image": null,
+    "discordGuildId": null,
+    "publicFlag": null
+    },
+    "title": "text_channel2",
+    "description": "A test of the createTextChannel endpoint",
+    "position": 2,
+    "selected": false
+    },
+    {
+    "id": 68525100948758528,
+    "createdAt": "2021-11-05T22:14:17.205841",
+    "guildEntity": {
+    "id": 67397832729927680,
+    "createdAt": "2021-11-02T19:34:55.519701",
+    "name": "Test Server",
+    "description": "A test of the createGuild endpoint",
+    "image": null,
+    "discordGuildId": null,
+    "publicFlag": null
+    },
+    "title": "text_channel3",
+    "description": "A test of the createTextChannel endpoint",
+    "position": 1,
+    "selected": false
+    },
+    {
+    "id": 68525142635945984,
+    "createdAt": "2021-11-05T22:14:27.144413",
+    "guildEntity": {
+    "id": 67397832729927680,
+    "createdAt": "2021-11-02T19:34:55.519701",
+    "name": "Test Server",
+    "description": "A test of the createGuild endpoint",
+    "image": null,
+    "discordGuildId": null,
+    "publicFlag": null
+    },
+    "title": "text_channel4",
+    "description": "A test of the createTextChannel endpoint",
+    "position": 3,
+    "selected": false
+    }
+    ],
+    "voiceChannels": [
+    {
+    "id": 67732951395180544,
+    "createdAt": "2021-11-03T17:46:34.0455",
+    "guildEntity": {
+    "id": 67397832729927680,
+    "createdAt": "2021-11-02T19:34:55.519701",
+    "name": "Test Server",
+    "description": "A test of the createGuild endpoint",
+    "image": null,
+    "discordGuildId": null,
+    "publicFlag": null
+    },
+    "title": "voice_channel"
+    },
+    {
+    "id": 68527951242567680,
+    "createdAt": "2021-11-05T22:25:36.764522",
+    "guildEntity": {
+    "id": 67397832729927680,
+    "createdAt": "2021-11-02T19:34:55.519701",
+    "name": "Test Server",
+    "description": "A test of the createGuild endpoint",
+    "image": null,
+    "discordGuildId": null,
+    "publicFlag": null
+    },
+    "title": "voice_channel2"
+    }
+    ],
+    "currentTextChannelIndex": 0,
+    "name": "Siege Pros",
+    "icon": "https://cdn.discordapp.com/icons/502575389550575636/a_de3ebce52088268c6a9662623144e2a0.webp?size=96",
+    "description": "Epic Server",
+    "id": "95679222752497660"
+  },
+  {
+    "members": [
+      {
+        "id": 48893984008007680,
+        "username": "HaZe",
+        "displayName": "HaZe",
+        "nameTag": "1",
+        "createdAt": "2021-09-12T18:09:41.930652",
+        "email": "bressetteprogramming@gmail.com",
+        "oktaId": "00u154plb3z316ere5d7"
+      }
+    ],
+    "textChannels": [
+      {
+        "id": 67400212611571712,
+        "createdAt": "2021-11-02T19:44:26.384593",
+        "guildEntity": {
+          "id": 67397832729927680,
+          "createdAt": "2021-11-02T19:34:55.519701",
+          "name": "Test Server",
+          "description": "A test of the createGuild endpoint",
+          "image": null,
+          "discordGuildId": null,
+          "publicFlag": null
+        },
+        "title": "text_channel",
+        "description": "A test of the createTextChannel endpoint",
+        "position": 0,
+        "selected": true
+      },
+      {
+        "id": 68525085501136896,
+        "createdAt": "2021-11-05T22:14:13.538566",
+        "guildEntity": {
+          "id": 67397832729927680,
+          "createdAt": "2021-11-02T19:34:55.519701",
+          "name": "Test Server",
+          "description": "A test of the createGuild endpoint",
+          "image": null,
+          "discordGuildId": null,
+          "publicFlag": null
+        },
+        "title": "text_channel2",
+        "description": "A test of the createTextChannel endpoint",
+        "position": 2,
+        "selected": false
+      },
+      {
+        "id": 68525100948758528,
+        "createdAt": "2021-11-05T22:14:17.205841",
+        "guildEntity": {
+          "id": 67397832729927680,
+          "createdAt": "2021-11-02T19:34:55.519701",
+          "name": "Test Server",
+          "description": "A test of the createGuild endpoint",
+          "image": null,
+          "discordGuildId": null,
+          "publicFlag": null
+        },
+        "title": "text_channel3",
+        "description": "A test of the createTextChannel endpoint",
+        "position": 1,
+        "selected": false
+      },
+      {
+        "id": 68525142635945984,
+        "createdAt": "2021-11-05T22:14:27.144413",
+        "guildEntity": {
+          "id": 67397832729927680,
+          "createdAt": "2021-11-02T19:34:55.519701",
+          "name": "Test Server",
+          "description": "A test of the createGuild endpoint",
+          "image": null,
+          "discordGuildId": null,
+          "publicFlag": null
+        },
+        "title": "text_channel4",
+        "description": "A test of the createTextChannel endpoint",
+        "position": 3,
+        "selected": false
+      }
+    ],
+    "voiceChannels": [
+      {
+        "id": 67732951395180544,
+        "createdAt": "2021-11-03T17:46:34.0455",
+        "guildEntity": {
+          "id": 67397832729927680,
+          "createdAt": "2021-11-02T19:34:55.519701",
+          "name": "Test Server",
+          "description": "A test of the createGuild endpoint",
+          "image": null,
+          "discordGuildId": null,
+          "publicFlag": null
+        },
+        "title": "voice_channel"
+      },
+      {
+        "id": 68527951242567680,
+        "createdAt": "2021-11-05T22:25:36.764522",
+        "guildEntity": {
+          "id": 67397832729927680,
+          "createdAt": "2021-11-02T19:34:55.519701",
+          "name": "Test Server",
+          "description": "A test of the createGuild endpoint",
+          "image": null,
+          "discordGuildId": null,
+          "publicFlag": null
+        },
+        "title": "voice_channel2"
+      }
+    ],
+    "currentTextChannelIndex": 0,
+    "name": "Siege Pros",
+    "icon": "https://cdn.discordapp.com/avatars/304475016936816640/a_7cde5bfd9549b15e98d17eb24d758593.webp?size=96",
+    "description": "Epic Server",
+    "id": "95662282482929661"
+  },
+  {
+    "members": [
+      {
+        "id": 48893984008007680,
+        "username": "HaZe",
+        "displayName": "HaZe",
+        "nameTag": "1",
+        "createdAt": "2021-09-12T18:09:41.930652",
+        "email": "bressetteprogramming@gmail.com",
+        "oktaId": "00u154plb3z316ere5d7"
+      }
+    ],
+    "textChannels": [
+      {
+        "id": 67400212611571712,
+        "createdAt": "2021-11-02T19:44:26.384593",
+        "guildEntity": {
+          "id": 67397832729927680,
+          "createdAt": "2021-11-02T19:34:55.519701",
+          "name": "Test Server",
+          "description": "A test of the createGuild endpoint",
+          "image": null,
+          "discordGuildId": null,
+          "publicFlag": null
+        },
+        "title": "text_channel",
+        "description": "A test of the createTextChannel endpoint",
+        "position": 0,
+        "selected": true
+      },
+      {
+        "id": 68525085501136896,
+        "createdAt": "2021-11-05T22:14:13.538566",
+        "guildEntity": {
+          "id": 67397832729927680,
+          "createdAt": "2021-11-02T19:34:55.519701",
+          "name": "Test Server",
+          "description": "A test of the createGuild endpoint",
+          "image": null,
+          "discordGuildId": null,
+          "publicFlag": null
+        },
+        "title": "text_channel2",
+        "description": "A test of the createTextChannel endpoint",
+        "position": 2,
+        "selected": false
+      },
+      {
+        "id": 68525100948758528,
+        "createdAt": "2021-11-05T22:14:17.205841",
+        "guildEntity": {
+          "id": 67397832729927680,
+          "createdAt": "2021-11-02T19:34:55.519701",
+          "name": "Test Server",
+          "description": "A test of the createGuild endpoint",
+          "image": null,
+          "discordGuildId": null,
+          "publicFlag": null
+        },
+        "title": "text_channel3",
+        "description": "A test of the createTextChannel endpoint",
+        "position": 1,
+        "selected": false
+      },
+      {
+        "id": 68525142635945984,
+        "createdAt": "2021-11-05T22:14:27.144413",
+        "guildEntity": {
+          "id": 67397832729927680,
+          "createdAt": "2021-11-02T19:34:55.519701",
+          "name": "Test Server",
+          "description": "A test of the createGuild endpoint",
+          "image": null,
+          "discordGuildId": null,
+          "publicFlag": null
+        },
+        "title": "text_channel4",
+        "description": "A test of the createTextChannel endpoint",
+        "position": 3,
+        "selected": false
+      }
+    ],
+    "voiceChannels": [
+      {
+        "id": 67732951395180544,
+        "createdAt": "2021-11-03T17:46:34.0455",
+        "guildEntity": {
+          "id": 67397832729927680,
+          "createdAt": "2021-11-02T19:34:55.519701",
+          "name": "Test Server",
+          "description": "A test of the createGuild endpoint",
+          "image": null,
+          "discordGuildId": null,
+          "publicFlag": null
+        },
+        "title": "voice_channel"
+      },
+      {
+        "id": 68527951242567680,
+        "createdAt": "2021-11-05T22:25:36.764522",
+        "guildEntity": {
+          "id": 67397832729927680,
+          "createdAt": "2021-11-02T19:34:55.519701",
+          "name": "Test Server",
+          "description": "A test of the createGuild endpoint",
+          "image": null,
+          "discordGuildId": null,
+          "publicFlag": null
+        },
+        "title": "voice_channel2"
+      }
+    ],
+    "currentTextChannelIndex": 0,
+    "name": "Siege Pros",
+    "icon": "https://cdn.discordapp.com/avatars/326546102537158666/7f2ade2fd4f415e307aa277e0e2b137b.webp?size=96",
+    "description": "Epic Server",
+    "id": "95662282482929662"
+  },
+  {
+    "members": [
+      {
+        "id": 48893984008007680,
+        "username": "HaZe",
+        "displayName": "HaZe",
+        "nameTag": "1",
+        "createdAt": "2021-09-12T18:09:41.930652",
+        "email": "bressetteprogramming@gmail.com",
+        "oktaId": "00u154plb3z316ere5d7"
+      }
+    ],
+    "textChannels": [
+      {
+        "id": 67400212611571712,
+        "createdAt": "2021-11-02T19:44:26.384593",
+        "guildEntity": {
+          "id": 67397832729927680,
+          "createdAt": "2021-11-02T19:34:55.519701",
+          "name": "Test Server",
+          "description": "A test of the createGuild endpoint",
+          "image": null,
+          "discordGuildId": null,
+          "publicFlag": null
+        },
+        "title": "text_channel",
+        "description": "A test of the createTextChannel endpoint",
+        "position": 0,
+        "selected": true
+      },
+      {
+        "id": 68525085501136896,
+        "createdAt": "2021-11-05T22:14:13.538566",
+        "guildEntity": {
+          "id": 67397832729927680,
+          "createdAt": "2021-11-02T19:34:55.519701",
+          "name": "Test Server",
+          "description": "A test of the createGuild endpoint",
+          "image": null,
+          "discordGuildId": null,
+          "publicFlag": null
+        },
+        "title": "text_channel2",
+        "description": "A test of the createTextChannel endpoint",
+        "position": 2,
+        "selected": false
+      },
+      {
+        "id": 68525100948758528,
+        "createdAt": "2021-11-05T22:14:17.205841",
+        "guildEntity": {
+          "id": 67397832729927680,
+          "createdAt": "2021-11-02T19:34:55.519701",
+          "name": "Test Server",
+          "description": "A test of the createGuild endpoint",
+          "image": null,
+          "discordGuildId": null,
+          "publicFlag": null
+        },
+        "title": "text_channel3",
+        "description": "A test of the createTextChannel endpoint",
+        "position": 1,
+        "selected": false
+      },
+      {
+        "id": 68525142635945984,
+        "createdAt": "2021-11-05T22:14:27.144413",
+        "guildEntity": {
+          "id": 67397832729927680,
+          "createdAt": "2021-11-02T19:34:55.519701",
+          "name": "Test Server",
+          "description": "A test of the createGuild endpoint",
+          "image": null,
+          "discordGuildId": null,
+          "publicFlag": null
+        },
+        "title": "text_channel4",
+        "description": "A test of the createTextChannel endpoint",
+        "position": 3,
+        "selected": false
+      }
+    ],
+    "voiceChannels": [
+      {
+        "id": 67732951395180544,
+        "createdAt": "2021-11-03T17:46:34.0455",
+        "guildEntity": {
+          "id": 67397832729927680,
+          "createdAt": "2021-11-02T19:34:55.519701",
+          "name": "Test Server",
+          "description": "A test of the createGuild endpoint",
+          "image": null,
+          "discordGuildId": null,
+          "publicFlag": null
+        },
+        "title": "voice_channel"
+      },
+      {
+        "id": 68527951242567680,
+        "createdAt": "2021-11-05T22:25:36.764522",
+        "guildEntity": {
+          "id": 67397832729927680,
+          "createdAt": "2021-11-02T19:34:55.519701",
+          "name": "Test Server",
+          "description": "A test of the createGuild endpoint",
+          "image": null,
+          "discordGuildId": null,
+          "publicFlag": null
+        },
+        "title": "voice_channel2"
+      }
+    ],
+    "currentTextChannelIndex": 0,
+    "name": "Siege Pros",
+    "icon": "https://cdn.discordapp.com/avatars/703427817009840188/f483928f42ba582ac47002926aad415d.webp?size=96",
+    "description": "Epic Server",
+    "id": "95662282482929663"
+  }
+]
+
+

@@ -828,5 +828,9 @@
         "avatar": "https://cdn.parlantos.com/kixstar.jpg"
       }
     }
-  ]
+  ],
+  "name": "Siege Pros",
+  "icon": "https://cdn.parlantos.com/images/kixstar.jpg",
+  "description": "Epic Server",
+  "id": "95662282482929660"
 }
