@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {GuildService} from '../guild.service';
+import {ActivatedRoute} from '@angular/router';
+import {Subscription} from 'rxjs';
+import {Member} from '../../../../shared/models/Member';
 
 @Component({
   selector: 'app-members',
@@ -7,17 +11,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MembersComponent implements OnInit {
 
-  members: Array<{ icon: string, username: string; }> = [];
+  members: Array<Member> = [];
 
-  constructor() {
-    let icon = 'https://cdn.discordapp.com/avatars/304475016936816640/a_7cde5bfd9549b15e98d17eb24d758593.webp?size=96';
-    let username = 'HaZe (Jom)';
-    this.members.push({icon, username});
-    icon = 'https://cdn.discordapp.com/avatars/326546102537158666/7f2ade2fd4f415e307aa277e0e2b137b.webp?size=96';
-    username = 'Annual';
-    this.members.push({icon, username});
+  guildId: string;
+
+  paramMapSubscription: Subscription;
+
+  constructor(private guildService: GuildService, private route: ActivatedRoute) {}
+
+  ngOnInit() {
+    this.paramMapSubscription = this.route.parent.params.subscribe(parentParams => {
+      this.guildId = parentParams.serverId;
+    });
+
+    this.guildService.guildData$.subscribe(result => {
+      if (result) {
+        if (!this.guildId) {
+          this.members = result.get(this.route.snapshot.parent.params.serverId).members;
+        } else {
+          this.members = result.get(this.guildId).members;
+        }
+        this.members.sort((a, b) => a.username.localeCompare(b.username));
+      }
+    });
   }
-
-  ngOnInit() {}
 
 }

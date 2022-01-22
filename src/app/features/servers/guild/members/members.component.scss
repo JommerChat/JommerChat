@@ -4,6 +4,8 @@
 
 .member-list {
   background-color: var(--ion-color-secondary);
+  overflow: auto;
+  height: calc(100vh - 85px);
 }
 
 .member-name {

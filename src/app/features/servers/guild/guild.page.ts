@@ -14,6 +14,8 @@ export class GuildPage implements OnInit, OnDestroy {
 
   paramMapSubscription: Subscription;
 
+  channelId: string;
+
 
   constructor(private router: Router, private route: ActivatedRoute, private guildService: GuildService) { }
 
@@ -24,8 +26,8 @@ export class GuildPage implements OnInit, OnDestroy {
     });
     this.guildService.guildData$.subscribe(result => {
       if (result?.has(this.guildId)) {
-        const selectedId = result.get(this.guildId).textChannels.find(s => s.selected).id;
-        this.router.navigate(['channel', selectedId], {relativeTo: this.route});
+        this.channelId = result.get(this.guildId).textChannels.find(s => s.selected).id;
+        this.router.navigate(['channel', this.channelId], {relativeTo: this.route});
       }
     });
   }

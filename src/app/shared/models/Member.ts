@@ -6,4 +6,5 @@ export interface Member {
   createdAt: string;
   email: string;
   oktaId: string;
+  avatar?: string;
 }

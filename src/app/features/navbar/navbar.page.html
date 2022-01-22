@@ -75,17 +75,6 @@
               </ion-button>
             </ion-col>
           </ion-row>
-          <ion-row class="ion-margin-top">
-            <ion-col class="ion-no-padding">
-              <div>
-                <div (click)="navTabClicked(4)" [ngClass]="{ 'nav-tab-selected' : navTabSelectedList[4]}">
-                  <ion-avatar class="server-icon" >
-                    <img src="https://cdn.parlantos.com/images/kixstar.jpg" alt="test">
-                  </ion-avatar>
-                </div>
-              </div>
-            </ion-col>
-          </ion-row>
           <ion-row class="ion-margin-top" *ngFor="let server of displayedServer; let i = index">
             <ion-col class="ion-no-padding">
               <div>

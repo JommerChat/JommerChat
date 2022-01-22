@@ -4,7 +4,7 @@ import {VoiceChannel} from './VoiceChannel';
 import {Messages} from './Messages';
 
 export interface GuildInfo {
-  members: Member;
+  members: Member[];
   textChannels: TextChannel[];
   voiceChannels: VoiceChannel[];
   currentTextChannelIndex: number;
