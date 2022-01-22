@@ -1,5 +1,5 @@
 <div class="container-div">
-  <ion-grid class="messages-grid">
+  <ion-grid class="messages-grid" [style.height.px]="gridHeight">
     <ion-row *ngFor="let i of messages" class="message-row">
       <ion-col class="avatar-col">
         <ion-avatar class="avatar-img">
@@ -15,4 +15,12 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+  <div class="input-box-div">
+    <form [formGroup]="inputFormGroup" class="message-form">
+      <ion-textarea formControlName="inputBox" class="message-input" (keydown.enter)="sendMessage()" placeholder="Enter message here" (ionChange)="autoGrowTextArea()" autoGrow="true"></ion-textarea>
+    </form>
+    <ion-button class="send-button ion-no-margin" (click)="sendMessage()" size="small">
+      <ion-icon name="send-sharp" class="send-icon"></ion-icon>
+    </ion-button>
+  </div>
 </div>
