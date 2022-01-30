@@ -33,8 +33,7 @@ export class NavbarPage implements OnInit {
         }
       }
     });
-    // TODO: add endpoint to fetch the member id with the token requested from the auth service
-    this.guildService.fetchGuildsForMember('').subscribe(result => {
+    this.guildService.fetchGuildsForMember().subscribe(result => {
       for (const i of result) {
         const icon = i.icon;
         const name = i.name;
@@ -44,6 +43,7 @@ export class NavbarPage implements OnInit {
       }
       console.log(`Contents of displayedServer after pushing elements: ${JSON.stringify(this.displayedServer)}`);
     });
+    console.log(`The OKTA access token is: ${this.authService.getAccessToken()}`);
   }
 
   navTabClicked(index: number, serverId?: string): void {

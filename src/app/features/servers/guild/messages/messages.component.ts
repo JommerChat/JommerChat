@@ -41,7 +41,7 @@ export class MessagesComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.gridViewChildrenSubscription.unsubscribe();
+    this.gridViewChildrenSubscription?.unsubscribe();
   }
 
   getMessage() {
