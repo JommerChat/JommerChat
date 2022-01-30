@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  issuer: 'https://dev-75166832.okta.com',
+  issuer: 'https://dev-75166832.okta.com/oauth2/default',
   clientId: '0oa156czptZmhqdrv5d7',
   redirectUri: 'http://localhost:8100/login/callback',
   scopes: 'openid profile email',
