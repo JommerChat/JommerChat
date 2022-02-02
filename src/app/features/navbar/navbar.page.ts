@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {CreateServerService} from '../servers/create-server/create-server.service';
 import {GuildService} from '../servers/guild/guild.service';
@@ -9,7 +9,7 @@ import {AuthService} from '../../shared/auth/auth.service';
   templateUrl: './navbar.page.html',
   styleUrls: ['./navbar.page.scss'],
 })
-export class NavbarPage implements OnInit {
+export class NavbarPage implements OnInit, AfterViewInit {
 
   displayCreateServerDialog = false;
   removeCreateServerLayout = false;
@@ -33,6 +33,10 @@ export class NavbarPage implements OnInit {
         }
       }
     });
+    console.log(`The OKTA access token is: ${this.authService.getAccessToken()}`);
+  }
+
+  ngAfterViewInit() {
     this.guildService.fetchGuildsForMember().subscribe(result => {
       for (const i of result) {
         const icon = i.icon;
@@ -43,7 +47,6 @@ export class NavbarPage implements OnInit {
       }
       console.log(`Contents of displayedServer after pushing elements: ${JSON.stringify(this.displayedServer)}`);
     });
-    console.log(`The OKTA access token is: ${this.authService.getAccessToken()}`);
   }
 
   navTabClicked(index: number, serverId?: string): void {

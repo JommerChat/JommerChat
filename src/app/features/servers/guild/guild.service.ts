@@ -36,7 +36,7 @@ export class GuildService {
   }
 
   fetchGuildsForMember(): Observable<GuildInfo[]> {
-    return this.httpClient.get<GuildInfo[]>(`${environment.guildOrchBaseUrl}/fetchGuilds`, {});
+    return this.httpClient.get<GuildInfo[]>(`${environment.guildOrchBaseUrl}/fetchGuilds`);
   }
 
 

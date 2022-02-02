@@ -11,6 +11,7 @@ export class AuthInterceptorService implements HttpInterceptor {
   constructor(private authService: AuthService) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    console.log('Intercepting request and injecting token: ' + this.authService.getAccessToken());
     req = req.clone({
       setHeaders: {
         Authorization: `Bearer ${this.authService.getAccessToken()}`

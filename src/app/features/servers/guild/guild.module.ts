@@ -10,6 +10,7 @@ import { GuildPage } from './guild.page';
 import {ChannelsComponent} from './channels/channels.component';
 import {MessagesComponent} from './messages/messages.component';
 import {MembersComponent} from './members/members.component';
+import {AuthInterceptorService} from '../../../shared/auth/auth-interceptor.service';
 
 @NgModule({
     imports: [

@@ -8,8 +8,9 @@ export const environment = {
   clientId: '0oa156czptZmhqdrv5d7',
   redirectUri: 'http://localhost:8100/login/callback',
   scopes: 'openid profile email',
-  guildOrchBaseUrl: 'http://localhost:8080/guild'
+  guildOrchBaseUrl: 'https://api.parlantos.com/guild'
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file
