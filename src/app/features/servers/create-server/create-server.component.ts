@@ -85,4 +85,8 @@ export class CreateServerComponent implements OnInit {
     this.createServerService.createServerPopupStatus.next(false);
   }
 
+  createServer() {
+
+  }
+
 }
