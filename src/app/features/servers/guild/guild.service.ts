@@ -31,6 +31,13 @@ export class GuildService {
     }
   }
 
+  addGuild(guildId, guildInfo): void {
+    if (!this.guildDataMap.has(guildId)) {
+      this.guildDataMap.set(guildId, guildInfo);
+      this.guildData.next(this.guildDataMap);
+    }
+  }
+
   fetchInitialGuildInfo(guildId: string): Observable < GuildInfo > {
     return this.httpClient.get(`${environment.guildOrchBaseUrl}/initialInfo?guildId=${guildId}`) as Observable<GuildInfo>;
   }

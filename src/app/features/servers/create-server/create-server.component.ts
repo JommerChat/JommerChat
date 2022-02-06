@@ -3,6 +3,7 @@ import {FileChangeEvent} from '@angular/compiler-cli/src/perform_watch';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {CreateServerService} from './create-server.service';
+import {GuildService} from '../guild/guild.service';
 
 @Component({
   selector: 'app-create-server',
@@ -26,7 +27,7 @@ export class CreateServerComponent implements OnInit {
   invalidInviteLink = false;
 
 
-  constructor(private router: Router, private createServerService: CreateServerService) { }
+  constructor(private router: Router, private createServerService: CreateServerService, private guildDataService: GuildService) { }
 
   ngOnInit() {
     this.createServerFormGroup = new FormGroup({
@@ -86,7 +87,12 @@ export class CreateServerComponent implements OnInit {
   }
 
   createServer() {
-
+    this.createServerService.createServer(this.imageToUpload, this.createServerFormGroup.get('serverName').value,
+      this.createServerFormGroup.get('serverDescription').value).subscribe(result => {
+        this.guildDataService.addGuild(result.id, result);
+        this.router.navigate(['navbar', 'server', result.id]);
+        this.createServerService.createServerPopupStatus.next(false);
+    });
   }
 
 }

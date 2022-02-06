@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {AfterViewInit, ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {CreateServerService} from '../servers/create-server/create-server.service';
 import {GuildService} from '../servers/guild/guild.service';
@@ -18,7 +18,7 @@ export class NavbarPage implements OnInit, AfterViewInit {
   navTabSelectedList: boolean[] = [false, false, false, false, false, false];
 
   constructor(private router: Router, private createServerService: CreateServerService, private guildService: GuildService,
-              private authService: AuthService) { }
+              private authService: AuthService, private changeDetector: ChangeDetectorRef) { }
 
   ngOnInit() {
     this.createServerService.$createServerPopupStatus.subscribe(result => {
@@ -46,6 +46,22 @@ export class NavbarPage implements OnInit, AfterViewInit {
         this.displayedServer.push({icon, name, id, selected});
       }
       console.log(`Contents of displayedServer after pushing elements: ${JSON.stringify(this.displayedServer)}`);
+    });
+    this.guildService.guildData$.subscribe(result => {
+      console.log('Received updated guild data');
+      // if (result?.size > this.displayedServer.length) {
+      if (result) {
+        result.forEach((guild, key) => {
+          if (!this.displayedServer.find(s => s.id === key)) {
+            const icon = guild.icon;
+            const name = guild.name;
+            const id = guild.id;
+            const selected = false;
+            this.displayedServer.push({icon, name, id, selected});
+          }
+        });
+      }
+      // }
     });
   }
 
