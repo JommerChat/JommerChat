@@ -16,17 +16,22 @@ app.use(express.static('public'));
 app.use(cors());
 
 app.get(`${baseUrl}/initialInfo`, async (req, resp) => {
-  const initialInfo = JSON.parse(fs.readFileSync('/home/bressette/git/parlantos/LocalServer/initialInfo.json'));
+  const initialInfo = JSON.parse(fs.readFileSync('/Users/johnathanbressette/Documents/git/JommerChat/LocalServer/initialInfo.json'));
   resp.json(initialInfo);
 });
 
 app.get(`${baseUrl}/fetchGuilds`, async(req, resp) => {
-  const fetchGuilds = JSON.parse(fs.readFileSync('/home/bressette/git/parlantos/LocalServer/MembersGuilds.json'));
+  const fetchGuilds = JSON.parse(fs.readFileSync('/Users/johnathanbressette/Documents/git/JommerChat/LocalServer/MembersGuilds.json'));
+  resp.json(fetchGuilds);
+});
+
+app.get(`${baseUrl}/fetchServerCards`, async(req, resp) => {
+  const fetchGuilds = JSON.parse(fs.readFileSync('/Users/johnathanbressette/Documents/git/JommerChat/LocalServer/MembersGuilds.json'));
   resp.json(fetchGuilds);
 });
 
 app.post(`${baseUrl}/createServer`, async(req, resp) => {
-  const initialInfo = JSON.parse(fs.readFileSync('/home/bressette/git/parlantos/LocalServer/initialInfo.json'));
+  const initialInfo = JSON.parse(fs.readFileSync('/Users/johnathanbressette/Documents/git/JommerChat/LocalServer/initialInfo.json'));
   initialInfo.id = (Math.floor(Math.random() * 1000)).toString();
   resp.json(initialInfo);
 });
