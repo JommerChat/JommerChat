@@ -1,0 +1,10 @@
+<ion-card (click)="navigateToGuild(serverCardDetails.guildId)">
+  <ion-card-header>
+    <h1 style="text-align: center">${{serverCardDetails.serverTitle}}</h1>
+    <img *ngIf="serverCardDetails.iconUrl !== undefined" [src]="serverCardDetails.iconUrl">
+  </ion-card-header>
+  <ion-card-content>
+    <img *ngIf="serverCardDetails.bannerUrl" [src]="serverCardDetails.bannerUrl">
+    <p>${{serverCardDetails.description}}</p>
+  </ion-card-content>
+</ion-card>

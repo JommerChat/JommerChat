@@ -19,22 +19,22 @@ const routes: Routes = [
   {
     path: 'navbar',
     loadChildren: () => import('./features/navbar/navbar.module').then( m => m.NavbarPageModule),
-    canActivate: [ AuthGuardService ]
+    // canActivate: [ AuthGuardService ]
   },
   {
     path: 'mentions',
     loadChildren: () => import('./features/mentions/mentions.module').then( m => m.MentionsPageModule),
-    canActivate: [ AuthGuardService ]
+    // canActivate: [ AuthGuardService ]
   },
   {
     path: 'explore',
     loadChildren: () => import('./features/explore/explore.module').then( m => m.ExplorePageModule),
-    canActivate: [ AuthGuardService ]
+    // canActivate: [ AuthGuardService ]
   },
   {
     path: 'servers',
     loadChildren: () => import('./features/servers/servers.module').then( m => m.ServersPageModule),
-    canActivate: [ AuthGuardService ]
+    // canActivate: [ AuthGuardService ]
   },
   {
     path: 'create-account',
